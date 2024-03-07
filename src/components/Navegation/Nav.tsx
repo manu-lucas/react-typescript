@@ -14,13 +14,13 @@ const Nav: React.FC = () => {
   ];
 
   return (
-    <>
-    <div className="containerNav">     
+    <div className="containerNav">
+    <div className="partNav">     
       {referencesData.map((reference, index) => (
         <Reference key={index} title={reference.name} icons={reference.rel} />
       ))}{" "}
   </div>
-    </>
+    </div>
   );
 };
 export default Nav;
