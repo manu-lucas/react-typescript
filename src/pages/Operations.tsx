@@ -3,15 +3,15 @@ import '../styles/App.scss'
 
 
 
-const Calendary: React.FC = () => {
+const Operations: React.FC = () => {
 
     
   return (
 <>
-<h2>Calendary</h2>
+<h2>operations</h2>
      
 </>
   );
 };
 
-export default Calendary;
+export default Operations;
