@@ -1,16 +1,16 @@
 import React from 'react';
-import '../styles/App.scss'
-
+import Nav from '../components/Navegation/Nav';
 
 
 const Commercial: React.FC = () => {
 
     
   return (
-<>
-<h2>commercial</h2>
-     
-</>
+<div className='containerHome'>
+     <Nav/>
+
+
+</div>
   );
 };
 

@@ -4,6 +4,7 @@ import {createBrowserRouter,RouterProvider } from "react-router-dom";
 import LandingPage from './pages/LandingPage'
 import Home from './pages/Home';
 import './index.css'
+import Commercial from './pages/Commercial';
 
 
 
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element: <Home />,
+  },
+  {
+    path: "/comercial",
+    element: <Commercial />,
   },
 ]);
 
