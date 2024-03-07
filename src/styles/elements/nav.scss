@@ -1,5 +1,11 @@
 .containerNav{
-    width: 15rem;
+    width: 20%;
     background-color: rgb(232, 250, 215);
     height: 100%;
+    border-top-right-radius: 50px; /* Ajusta el radio de la esquina superior derecha */
+  border-bottom-right-radius: 50px;
+}
+
+.partNav{
+    margin-top: 5rem;
 }

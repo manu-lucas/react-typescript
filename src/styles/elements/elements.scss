@@ -8,6 +8,7 @@
     border-radius: 50px;
     margin-bottom: 1rem;
     background-color: rgb(182, 212, 182);
+    height: auto;
     
 }
 .centerDiv h2{
@@ -16,6 +17,9 @@
 }
 
 .cardDiv{
-    width: 5rem;
-    height: 5rem;
+    width: 25rem;
+    height: 20rem;
+    background-color: rgb(253, 253, 253);
+    border-radius: 20px;
+    margin-left: 5rem;
 }
