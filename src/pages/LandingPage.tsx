@@ -1,14 +1,17 @@
 import React from 'react';
+/* import './styles/App.scss' */
+import '../index.css'
+import Login from '../components/Login/Login'
 
 
 
 const LandingPage: React.FC = () => {
-  return (
-<>
-<h2>Hello</h2>
-     
-</>
+ return (
+     <div className="App">
+      <Login />
+    </div>
   );
 };
+
 
 export default LandingPage;
