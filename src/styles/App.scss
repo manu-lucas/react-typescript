@@ -1,8 +1,9 @@
 $primary-color: #007bff;
 
 
-.card{
-    background-color:$primary-color;
+.card{position: absolute;
     font-size: 3rem;
+    top:0;
+    right: 0;
 }
 
