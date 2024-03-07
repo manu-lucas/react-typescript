@@ -9,12 +9,10 @@ interface ReferenceProps {
 
 const Reference: React.FC<ReferenceProps> = ({ title, icons }) => {
   return (
-    <>
       <div className="centerDiv">
         <img src={icons} alt="Logo"/> 
         <h2>{title}</h2>
       </div>
-    </>
   );
 };
 

@@ -6,9 +6,7 @@ export default defineConfig({
   plugins: [react()],
   css: {
     preprocessorOptions: {
-      scss: {
-        additionalData: `@import "./src/styles/variables.scss";`, // Opcional: Puedes importar aquí tus variables globales
-      },
+    
     },
   },
 

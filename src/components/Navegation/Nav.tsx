@@ -15,7 +15,7 @@ const Nav: React.FC = () => {
 
   return (
     <>
-    <div className="container">     
+    <div className="containerNav">     
       {referencesData.map((reference, index) => (
         <Reference key={index} title={reference.name} icons={reference.rel} />
       ))}{" "}

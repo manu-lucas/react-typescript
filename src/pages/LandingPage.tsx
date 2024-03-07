@@ -1,5 +1,3 @@
-import 'normalize.css'
-
 import React from 'react';
 
 
