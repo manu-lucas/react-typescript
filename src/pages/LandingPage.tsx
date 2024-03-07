@@ -1,5 +1,6 @@
+import 'normalize.css'
+
 import React from 'react';
-import '../styles/App.scss'
 
 
 

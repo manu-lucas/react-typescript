@@ -1,5 +1,6 @@
 import React from 'react';
-import '../styles/App.scss'
+import '../styles/home/home.scss'
+import Nav from '../components/Navegation/Nav';
 
 
 
@@ -7,10 +8,13 @@ const Home: React.FC = () => {
 
     
   return (
-<>
-<h2>aaaaaaaaaaaa</h2>
+<div className='containerHome'>
+<Nav/>
+
+</div>
      
-</>
+
+
   );
 };
 
