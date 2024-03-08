@@ -1,5 +1,4 @@
 import React from "react";
-import '../../styles/elements/elements.scss'
 
 
 interface ReferenceProps {
@@ -9,7 +8,7 @@ interface ReferenceProps {
 
 const Reference: React.FC<ReferenceProps> = ({ title, icons }) => {
   return (
-      <div className="centerDiv">
+      <div >
         <img src={icons} alt="Logo"/> 
         <h2>{title}</h2>
       </div>
