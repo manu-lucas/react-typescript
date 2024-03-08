@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../../styles/landing.css'
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
