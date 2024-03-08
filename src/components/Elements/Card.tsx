@@ -1,5 +1,5 @@
 import React from "react";
-import '../../styles/elements/elements.scss'
+// import '../../styles/elements/elements.scss'
 
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 
 const Card: React.FC<Props> = () => {
   return (
-      <div className="cardDiv">
+      <div >
 
         <h3>Rentabilidad</h3>
 

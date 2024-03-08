@@ -1,7 +1,6 @@
 import React from "react";
 import Reference from "../Elements/Reference";
 import homeIcons from "../../assets/icons/home.svg";
-import '../../styles/elements/nav.scss'
 
 const Nav: React.FC = () => {
   const referencesData = [
@@ -14,8 +13,8 @@ const Nav: React.FC = () => {
   ];
 
   return (
-    <div className="containerNav">
-    <div className="partNav">     
+    <div >
+    <div >     
       {referencesData.map((reference, index) => (
         <Reference key={index} title={reference.name} icons={reference.rel} />
       ))}{" "}
