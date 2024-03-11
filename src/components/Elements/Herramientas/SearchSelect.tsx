@@ -17,7 +17,7 @@ const SearchSelect = () => {
   return (
     <div className="flex flex-col space-y-4">
       <Select
-        className="basic-single select w-48 absolute z-10"
+        className="basic-single select w-48 absolute z-50"
         classNamePrefix="select"
         defaultValue={clientOptions[0]}
         isClearable={isClearable}
