@@ -19,7 +19,7 @@ const CardCliente: React.FC<PropsCardClient> = ({title,razon,rut,direccion,linea
 
     
   return (
-    <Card className="py-4 inline-block  w-40 m-5">
+    <Card className=" w-80  my-5 h-full	">
     <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
       <h4 className="text-tiny uppercase font-bold">{title}</h4>
 

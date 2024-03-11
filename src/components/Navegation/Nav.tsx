@@ -1,25 +1,27 @@
 import React from "react";
 import Reference from "../Elements/Reference";
-import homeIcons from "../../assets/icons/home.svg";
+import { FaHome, FaCashRegister, FaFileSignature, FaCalendarAlt, FaLandmark } from 'react-icons/fa';
+import { IoBusiness } from 'react-icons/io5'; // Importación corregida aquí
 
 const Nav: React.FC = () => {
   const referencesData = [
-    { name: "Inicio", rel: homeIcons },
-    { name: "Comercial", rel: homeIcons },
-    { name: "Operaciones", rel: homeIcons },
-    { name: "Calendario", rel: homeIcons },
-    { name: "Administracion", rel: homeIcons },
-    { name: "Mi Empresa", rel: homeIcons },
+    { name: "Inicio", rel: <FaHome /> },
+    { name: "Comercial", rel: <FaCashRegister /> },
+    { name: "Operaciones", rel: <FaFileSignature /> },
+    { name: "Calendario", rel: <FaCalendarAlt /> },
+    { name: "Administracion", rel: <FaLandmark /> },
+    { name: "Mi Empresa", rel: <IoBusiness /> },
   ];
 
   return (
-    <div >
-    <div >     
-      {referencesData.map((reference, index) => (
-        <Reference key={index} title={reference.name} icons={reference.rel} />
-      ))}{" "}
-  </div>
+    <div className="h-screen w-48 bg-green-50">
+      <div className=" my-28">
+        {referencesData.map((reference, index) => (
+          <Reference key={index} title={reference.name} icons={reference.rel} />
+        ))}
+      </div>
     </div>
   );
 };
+
 export default Nav;

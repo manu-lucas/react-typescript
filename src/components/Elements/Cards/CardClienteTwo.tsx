@@ -31,7 +31,7 @@ const CardClienteTwo: React.FC<PropsCardClientTwo> = ({
   anticipos
 }) => {
   return (
-    <Card className="inline-block w-40 m-5 p-3">
+    <Card className=" w-80  my-5">
       <CardHeader className="pb-2 pt-1 px-2 flex flex-col">
         <h4 className="text-xs uppercase font-bold">{title}</h4>
         <h3 className="text-xs">{titlesecond}</h3>
@@ -72,7 +72,11 @@ const CardClienteTwo: React.FC<PropsCardClientTwo> = ({
 
           {  (title==="Proyectos")&&
         <div>
-          <p className="text-xs">Aceptado/Solicitado {aceptado}</p>
+          <div>  
+          <p className="text-xs">Aceptado/Solicitado</p>
+          <p> {aceptado}</p>
+          </div>
+          
           <p className="text-xs">En Espera{ enEspera}</p>
           <p className="text-xs">En Proceso{ enProceso}</p>
           <p className="text-xs">Anticipos{ anticipos}</p>
