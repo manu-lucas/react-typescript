@@ -5,6 +5,8 @@ import Commercial from "./pages/Commercial";
 import "./index.css";
 import Cliente from "./pages/nested/Cliente";
 import Consulta from "./pages/nested/Consultas";
+import Ecommerce from "./pages/nested/Ecommerce";
+
 
 let router = createBrowserRouter([
   {
@@ -29,6 +31,10 @@ let router = createBrowserRouter([
       {
         path: "consulta",
         element: <Consulta />,
+      },
+      {
+        path: "ecommerce",
+        element: <Ecommerce />,
       },
     ],
   },
