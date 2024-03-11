@@ -22,8 +22,8 @@ const Cliente: React.FC = () => {
       </div>
         <div className="flex flex-row justify-evenly">
           <div className="flex flex-row">
-            <Button name="Resumenes" />
-            <Button name="Proyectos" />
+            <Button name="Resumenes"  />
+            <Button name="Proyectos"  />
             <Button name="Facturas" />
           </div>
 
