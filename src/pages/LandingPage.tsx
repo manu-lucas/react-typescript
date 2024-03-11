@@ -6,7 +6,7 @@ import Login from '../components/Login/Login'
 
 const LandingPage: React.FC = () => {
  return (
-     <div >
+     <div  className='h-screen w-full bg-green-200	' >
       <Login />
    {/* {<DateSelect/>} */}
    </div>

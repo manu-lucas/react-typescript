@@ -12,11 +12,12 @@ import { CardClienteContacto } from '../components/Elements/Cards/CardClienteCon
 const Commercial: React.FC = () => {
     
   return (
-<div className='containerHome'>
+<div className='h-screen w-full bg-green-200 flex flex-row'>
       <Nav />
-      <Search />
+      {/* <Search />
       <DateSelect />
       <SearchSelect />
+
       <SelectPeriod />
       <CardClienteContacto razon='acaca' rut='asfdsadf' direccion='dsafads'/>
      

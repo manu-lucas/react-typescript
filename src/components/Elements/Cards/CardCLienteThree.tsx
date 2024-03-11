@@ -9,7 +9,7 @@ const CardClienteThree: React.FC<PropsCardClientThree> = () => {
   const [tareasActivo, setTareasActivo] = useState(false);
 
   return (
-    <Card className="inline-block w-full m-5 p-3">
+    <Card className="w-8/12		h-full my-5">
       <CardHeader className="pb-2 pt-1 px-2 flex flex-col">
         <div className='flex flex-row'>  
           <h4
