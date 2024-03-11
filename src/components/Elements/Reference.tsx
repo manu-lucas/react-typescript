@@ -1,17 +1,16 @@
-import React from "react";
-
+import React, { ReactElement } from "react";
 
 interface ReferenceProps {
   title: string;
-  icons: string;
+  icons: ReactElement; // Actualizado para aceptar un elemento React
 }
 
 const Reference: React.FC<ReferenceProps> = ({ title, icons }) => {
   return (
-      <div >
-        <img src={icons} alt="Logo"/> 
-        <h2>{title}</h2>
-      </div>
+    <div>
+      {icons} {/* Usado directamente, sin <img> */}
+      <h2>{title}</h2>
+    </div>
   );
 };
 
