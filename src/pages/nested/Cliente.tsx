@@ -15,8 +15,10 @@ const Cliente: React.FC = () => {
           <h2>/Información Detallada</h2>
         </div>
 
-      <div>
+      <div className="flex flex-row">
         <SearchSelect />
+        <Button name="+ Agregar" />
+
       </div>
         <div className="flex flex-row justify-evenly">
           <div className="flex flex-row">
