@@ -1,6 +1,8 @@
 import React from 'react';
 import Button from '../../components/Elements/Button/Button';
 import CardCliente from '../../components/Elements/Cards/CardCliente';
+import CardClienteTwo from '../../components/Elements/Cards/CardClienteTwo';
+import CardClienteThree from '../../components/Elements/Cards/CardCLienteThree';
 
 
 const Cliente: React.FC = () => {
@@ -23,8 +25,14 @@ const Cliente: React.FC = () => {
 Estado: Aceptado"   titleOne="Facturas Recurrentes"    />
 
 
+<CardClienteTwo title="Clasificacion" titlesecond='Ranking'
+ ventasTotal={14.688} npedidos={1} feedbackcliente={0} 
+afectacion={0} deudaT={0} deudaV={0}
+/>
+<CardClienteTwo title="Proyectos" titlesecond='Sin Datos'    
+aceptado={0} enEspera={0} enProceso={0} anticipos={0}  />
 
-
+<CardClienteThree  />
 
 
 

@@ -31,13 +31,13 @@ const CardCliente: React.FC<PropsCardClient> = ({title,razon,rut,direccion,linea
       <h4 className=" text-large"> {notas}</h4>
       {otproceso &&<p className="text-large">{otproceso} </p>  }
 
-      {(titleOne)&&<h4>Facturas Recurrentes</h4>}
-    {(titleOne)&&<Button   name= "Ver Todas Las Facturas"/>
-}
-
     </CardHeader>
     <CardBody className="overflow-visible py-2">
     
+    {(titleOne)&&<h4>Facturas Recurrentes</h4>}
+    {(titleOne)&&<Button   name= "Ver Todas Las Facturas"/>
+}
+
     </CardBody>
   </Card>
 );
