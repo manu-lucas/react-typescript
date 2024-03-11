@@ -47,7 +47,8 @@ const Search: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="p-4">
+      <div className="flex items-center space-x-4 mb-4">
       <Input
         color="primary"
         size="lg"
@@ -76,7 +77,8 @@ const Search: React.FC = () => {
           ))}
         </TableBody>
       </Table>
-    </div>
+      </div>
+      </div>
   );
 };
 
