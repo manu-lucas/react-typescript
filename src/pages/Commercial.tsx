@@ -20,8 +20,8 @@ const Commercial: React.FC = () => {
 
       <SelectPeriod />
       <CardClienteContacto razon='acaca' rut='asfdsadf' direccion='dsafads'/>
-     
-    <Outlet /> {/* Añade el Outlet aquí */}
+ */}     
+    <Outlet /> 
 
 
 </div>
