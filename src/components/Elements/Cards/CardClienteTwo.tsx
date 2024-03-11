@@ -1,47 +1,89 @@
 import React from 'react';
-import {Card, CardHeader, CardBody} from "@nextui-org/react";
-import Button from '../Button/Button';
+import { Card, CardHeader, CardBody } from "@nextui-org/react";
 
-
-
-interface PropsCardClient {
+interface PropsCardClientTwo {
   title?: string;
-  razon?: string;
-  rut?: string;
-  direccion?: string;
-  linea?: string;
-  notas?:string;
-  otproceso?:string;
-  titleOne?:string
-  }
-
-const CardCliente: React.FC<PropsCardClient> = ({title,razon,rut,direccion,linea,  notas,otproceso,titleOne}) => {
-
-    
-  return (
-    <Card className="py-4 inline-block  w-40 m-5">
-    <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-      <h4 className="text-tiny uppercase font-bold">{title}</h4>
-
-      {(title ==="Informacion")&&<h4 className="text-large">Razón Legal {razon}</h4>}
-      {(title === "Informacion")&&<h4 className=" text-large">Rut {rut}</h4>}
-      {(title === "Informacion")&&<h4 className=" text-large">Contacto </h4>}
-      {(title === "Informacion")&&<h4 className=" text-large">Dirección {direccion}</h4>}
-      {(title === "Informacion")&&<h4 className=" text-large">Línea de Credito  $ {linea}</h4>}
-      <h4 className=" text-large"> {notas}</h4>
-      {otproceso &&<p className="text-large">{otproceso} </p>  }
-
-      {(titleOne)&&<h4>Facturas Recurrentes</h4>}
-    {(titleOne)&&<Button   name= "Ver Todas Las Facturas"/>
+  titlesecond?: string;
+  npedidos?: number;
+  ventasTotal?: number;
+  feedbackcliente?: number;
+  afectacion?: number;
+  deudaT?: number;
+  deudaV?: number;
+  aceptado?:number;
+  enEspera?:number;
+  enProceso?:number;
+  anticipos?:number
 }
 
-    </CardHeader>
-    <CardBody className="overflow-visible py-2">
-    
-    </CardBody>
-  </Card>
-);
-  
+const CardClienteTwo: React.FC<PropsCardClientTwo> = ({
+  title,
+  titlesecond,
+  npedidos,
+  ventasTotal,
+  feedbackcliente,
+  afectacion,
+  deudaT,
+  deudaV,
+  aceptado,
+  enEspera,
+  enProceso,
+  anticipos
+}) => {
+  return (
+    <Card className="inline-block w-40 m-5 p-3">
+      <CardHeader className="pb-2 pt-1 px-2 flex flex-col">
+        <h4 className="text-xs uppercase font-bold">{title}</h4>
+        <h3 className="text-xs">{titlesecond}</h3>
+
+       {  (title!=="Proyectos")&& <div>
+          <p className="text-xs">Total Ventas {ventasTotal}</p>
+          <p className="text-xs">N° de pedidos {npedidos}</p>
+        </div>
+         }
+       
+
+      </CardHeader>
+      <CardBody className="overflow-visible py-2">
+        <div>
+
+        {  (title!=="Proyectos")&&<div> 
+          <div className="mb-2">
+            <h5 className="text-sm">Feedback clientes</h5>
+            <p className="text-xs">{feedbackcliente}</p>
+          </div>
+          <div className="mb-2">
+            <h5 className="text-sm">Afectación</h5>
+            <p className="text-xs">{afectacion}</p>
+          </div>
+          <div className="mb-2">
+            <h5 className="text-sm">Deuda Total</h5>
+            <p className="text-xs">{deudaT}</p>
+          </div>
+          <div>
+            <h5 className="text-sm">Deuda Vencida</h5>
+            <p className="text-xs">{deudaV}</p>
+          </div>
+          </div>}
+       
+
+          
+
+
+          {  (title==="Proyectos")&&
+        <div>
+          <p className="text-xs">Aceptado/Solicitado {aceptado}</p>
+          <p className="text-xs">En Espera{ enEspera}</p>
+          <p className="text-xs">En Proceso{ enProceso}</p>
+          <p className="text-xs">Anticipos{ anticipos}</p>
+
+        </div>
+         }  
+
+        </div>
+      </CardBody>
+    </Card>
+  );
 };
 
-export default CardCliente;
+export default CardClienteTwo;
