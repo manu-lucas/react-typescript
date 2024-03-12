@@ -38,7 +38,7 @@ const Inputs: React.FC<InputProps> = ({
       {(name === "celular" || name === "telefono") && (
         <div className="">
           <PhoneInput
-          
+  
             defaultCountry="cl"
             value={phone}
             onChange={setPhone} // Simplificado para depuración
@@ -46,7 +46,6 @@ const Inputs: React.FC<InputProps> = ({
               name: "phone",
               required: true,
               autoFocus: true,
-              placeholder: "Número de teléfono", // Cambiado para demostración
             }}
           />
         </div>
