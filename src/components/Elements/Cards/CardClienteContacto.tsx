@@ -35,10 +35,10 @@ const CardClienteContacto: React.FC<PropsDatosGenerales> = ({ razon: razonInicia
   const [vendedor, setVendedor] = useState<string>(vendedorInicial);
 
   return (
-    <Card className="py-4 w-full m-5">
-      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start flex">
-        <div className="flex flex-1 flex-row">
-          <h1 className="text-lg font-bold">Datos Generales</h1>
+    <Card className="py-4 w-full m-5  ">
+      <CardHeader className="pb-4 pt-2 px-4 ">
+        <div className="p-4 md:w-1/2 lg:w-1/3 xl:w-1/4">
+          <h1 className="text-lg font-bold p-4">Datos Generales</h1>
           <input className="text-large my-2 p-1 border rounded-md" type="text" placeholder="Razón Social" value={razon} onChange={(e) => setRazon(e.target.value)} />
           <input className="text-large my-2 p-1 border rounded-md" type="text" placeholder="Rut" value={rut} onChange={(e) => setRut(e.target.value)} />
           <input className="text-large my-2 p-1 border rounded-md" type="text" placeholder="Giro" value={giro} onChange={(e) => setGiro(e.target.value)} />
@@ -46,8 +46,8 @@ const CardClienteContacto: React.FC<PropsDatosGenerales> = ({ razon: razonInicia
           <input className="text-large my-2 p-1 border rounded-md" type="text" placeholder="Comuna" value={comuna} onChange={(e) => setComuna(e.target.value)} />
           <input className="text-large my-2 p-1 border rounded-md" type="text" placeholder="Ciudad" value={ciudad} onChange={(e) => setCiudad(e.target.value)} />
         </div>
-        <div className="flex flex-1 flex-row ">
-          <h1 className="text-lg font-bold">Contacto</h1>
+        <div className="p-4 md:w-1/2 lg:w-1/3 xl:w-1/4">
+          <h1 className="text-lg font-bold p-4">Contacto</h1>
           <input className="text-large my-2 p-1 border rounded-md" type="text" placeholder="Nombre" value={nombre} onChange={(e) => setNombre(e.target.value)} />
           <input className="text-large my-2 p-1 border rounded-md" type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
           <input className="text-large my-2 p-1 border rounded-md" type="text" placeholder="Celular" value={celular} onChange={(e) => setCelular(e.target.value)} />
