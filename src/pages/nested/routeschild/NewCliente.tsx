@@ -1,4 +1,5 @@
 import React from "react";
+import { CardClienteContacto } from "../../../components/Elements/Cards/CardClienteContacto";
 
 const Newcliente: React.FC = () => {
   return (
@@ -6,7 +7,10 @@ const Newcliente: React.FC = () => {
    <h2 className="text-black">Nuevos Clientes</h2>
 
 
-
+    <h2>newClient</h2>
+      {/* <SearchSelect />
+      <Search/> */}
+      <CardClienteContacto/>
 
 
    
