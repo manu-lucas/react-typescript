@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Input, Button, Table } from  '@nextui-org/react';
+import { Input, Button, Table, Pagination } from  '@nextui-org/react';
 import {
   TableHeader,
   TableBody,
@@ -7,6 +7,8 @@ import {
   TableRow,
   TableCell
 } from "@nextui-org/react";
+
+
 
 
 
@@ -78,6 +80,7 @@ const Search: React.FC = () => {
         </TableBody>
       </Table>
       </div>
+      <Pagination showControls total={10} initialPage={1} />
       </div>
   );
 };
