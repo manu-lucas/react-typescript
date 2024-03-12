@@ -7,9 +7,9 @@ interface ReferenceProps {
 
 const Reference: React.FC<ReferenceProps> = ({ title, icons }) => {
   return (
-    <div>
+    <div className="flex flex-row">
       {icons} {/* Usado directamente, sin <img> */}
-      <h2>{title}</h2>
+      <h2 >{title}</h2>
     </div>
   );
 };
