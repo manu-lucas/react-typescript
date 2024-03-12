@@ -4,26 +4,28 @@ import CardCliente from "../../components/Elements/Cards/CardCliente";
 import CardClienteTwo from "../../components/Elements/Cards/CardClienteTwo";
 import CardClienteThree from "../../components/Elements/Cards/CardCLienteThree";
 import SearchSelect from "../../components/Elements/Herramientas/SearchSelect";
+import { Outlet } from "react-router-dom"; // Importa Outlet
 
 const Cliente: React.FC = () => {
   return (
     <div className="w-full		h-screen		">
-      <div className=" w-10/12		h-screen  mx-auto
-      ">
+      <div
+        className=" w-10/12		h-screen  mx-auto
+      "
+      >
         <div className="flex flex-row">
           <h2>Clientes</h2>
           <h2>/Información Detallada</h2>
         </div>
 
-      <div className="flex flex-row">
-        <SearchSelect />
-        <Button name="+ Agregar" />
-
-      </div>
+        <div className="flex flex-row">
+          <SearchSelect />
+          <Button name="+ Agregar" />
+        </div>
         <div className="flex flex-row justify-evenly">
           <div className="flex flex-row">
-            <Button name="Resumenes"  />
-            <Button name="Proyectos"  />
+            <Button name="Resumenes" />
+            <Button name="Proyectos" />
             <Button name="Facturas" />
           </div>
 
@@ -33,7 +35,7 @@ const Cliente: React.FC = () => {
           </div>
         </div>
 
-  {/*---------------------------------*/ }
+        {/*---------------------------------*/}
 
         <div className="flex flex-row  my-5 justify-between">
           <div className="flex flex-col ">
@@ -71,9 +73,9 @@ const Cliente: React.FC = () => {
             anticipos={0}
           />
         </div>
-  {/*---------------------------------*/ }
+        {/*---------------------------------*/}
 
-  <div className="flex flex-row justify-between  h-96	 ">
+        <div className="flex flex-row justify-between  h-96	 ">
           <CardCliente
             title="OT en proceso"
             otproceso="#61 - ABARROTES ANDREA IBAÑEZ ESPINOZA E.I.R.L.
@@ -83,8 +85,8 @@ Estado: Aceptado"
 
           <CardClienteThree />
         </div>
-
       </div>
+      <Outlet />
     </div>
   );
 };
