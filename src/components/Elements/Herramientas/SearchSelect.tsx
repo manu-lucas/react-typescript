@@ -1,6 +1,6 @@
 
 import  { useState } from 'react';
-
+import { Pagination } from '@nextui-org/react'
 import Select from 'react-select';
 import { clientOptions } from './data';
 
@@ -34,7 +34,9 @@ const SearchSelect = () => {
           Clearable
         </Checkbox>
       </div>
+    <Pagination showControls total={10} initialPage={1} />  
     </div>
+
   );
 };
 
