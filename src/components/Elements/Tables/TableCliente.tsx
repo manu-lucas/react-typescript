@@ -67,7 +67,9 @@ const columns: Column[] = [
 ];
 
 const TableCliente: React.FC = () => {
+
     return (
+        
         <Table aria-label="Example table with dynamic content">
             <TableHeader columns={columns}>
                 {(column) => <TableColumn key={column.key}>{column.label}</TableColumn>}
