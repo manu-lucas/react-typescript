@@ -30,7 +30,7 @@ const CardClienteDGeneral: React.FC = () => {
   };
 
   return (
-    <Card className=" w-9/12	 m-5 bg-slate-400">
+    <Card className=" w-9/12	 m-5 bg-slate-400 ">
       <CardHeader className="w-full ">
         <div className=" w-full ">
           <h1 className="text-lg font-bold p-4">Datos Generales</h1>
