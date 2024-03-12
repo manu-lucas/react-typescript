@@ -7,6 +7,8 @@ import Cliente from "./pages/nested/Cliente";
 import Consulta from "./pages/nested/Consultas";
 import Ecommerce from "./pages/nested/Ecommerce";
 import Newcliente from "./pages/nested/routeschild/NewCliente";
+import Administration from "./pages/Administration";
+
 
 let router = createBrowserRouter([
   {
@@ -19,7 +21,11 @@ let router = createBrowserRouter([
     loader: () => ({ message: "Hello Data Router!" }),
     element: <Home />,
   },
-
+  {
+      path: "/administration",
+      loader: () => ({ message: "Hello Administrator!" }),
+      element: <Administration />,
+    },
   {
     path: "/comercial",
     element: <Commercial />,

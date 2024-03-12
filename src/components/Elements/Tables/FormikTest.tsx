@@ -2,11 +2,22 @@ import React from 'react';
 import { Formik, Form, Field } from 'formik';
 
 interface MyFormValues {
-  firstName: string;
+  razon: string;
+  rut: string;
+  giro: string;
+  direccion: string;
+  comuna: string;
+  ciudad: string;
 }
 
 const FormikTest: React.FC<{}> = () => {
-  const initialValues: MyFormValues = { firstName: '' };
+  const initialValues: MyFormValues = {  razon: "",
+    rut: "",
+    giro: "",
+    direccion: "",
+    comuna: "",
+    ciudad: "",
+    };
 
   return (
      <div className="container mx-auto">
@@ -20,13 +31,26 @@ const FormikTest: React.FC<{}> = () => {
         }}
       >
         <Form className="max-w-md">
-          <div className="mb-4"></div>
-          <label htmlFor="firstName">First Name</label>
-          <Field id="firstName" name="firstName" placeholder="First Name" />
+          <div className="mb-4 ">
+          <label className="m-8" htmlFor="DatosGenerales">Datos Generales</label>
+          <Field className="block w-full p-2 border rounded-md" id="razon" name="razon" placeholder="Razon Social" />
+          <Field className="block w-full p-2 border rounded-md" id="rut" name="rut" placeholder="rut" />
+          <Field className="block w-full p-2 border rounded-md" id="giro" name="giro" placeholder="giro" />
+          <Field className="block w-full p-2 border rounded-md" id="direccion" name="direccion" placeholder="direccion" />
+          <Field className="block w-full p-2 border rounded-md" id="comuna" name="comuna" placeholder="comuna" />
+          <Field className="block w-full p-2 border rounded-md" id="ciudad" name="ciudad" placeholder="ciudad" />
+            </div>
+           <div className="mb-4 ">
+          <label className="m-8" htmlFor="Contacto">Contacto</label>
+          <Field className="block w-full p-2 border rounded-md"  id="nombre" name="nombre" placeholder="Nombre" />
+          <Field className="block w-full p-2 border rounded-md"  id="apellido" name="apellido" placeholder="Apellido" />
+          <Field className="block w-full p-2 border rounded-md"  id="telefono" name="telefono" placeholder="Telefono" />
+            </div>
           <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
         </Form>
       </Formik>
     </div>
+    
   );
 };
 
