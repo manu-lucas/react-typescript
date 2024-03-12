@@ -63,7 +63,8 @@ const Search: React.FC = () => {
       </Button>
 
       {/* Table rendering */}
-      <Table aria-label="Example static collection table">
+        <Table aria-label="Example static collection table">
+          
         <TableHeader>
           <TableColumn>NAME</TableColumn>
           <TableColumn>ROLE</TableColumn>

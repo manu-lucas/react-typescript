@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/App.scss'
+import FormikTest from '../components/Elements/Tables/FormikTest';
 
 
 
@@ -9,9 +9,9 @@ const Administration
     
   return (
 <>
-<h2>administration
+<h2>Administration
 </h2>
-     
+   <FormikTest/>  
 </>
   );
 };
