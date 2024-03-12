@@ -42,7 +42,7 @@ const SelectPeriod = () => {
   return (
     <div className="flex flex-col space-y-4">
       <Select
-        className="mt-4 w-48 px-4 py-2 border rounded-md bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        className=" w-48 px-4 py-2 border rounded-md bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         classNamePrefix="select"
         value={selectedPeriod}
         onChange={handlePeriodChange}
