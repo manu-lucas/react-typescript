@@ -1,5 +1,7 @@
 import React from "react";
 import { CardClienteContacto } from "../../../components/Elements/Cards/CardClienteContacto";
+import TableTestSort from "../../../components/Elements/Tables/TableTestSort";
+import FormikTest from "../../../components/Elements/Tables/FormikTest";
 
 const Newcliente: React.FC = () => {
   return (
@@ -10,7 +12,9 @@ const Newcliente: React.FC = () => {
     <h2>newClient</h2>
       {/* <SearchSelect />
       <Search/> */}
-      <CardClienteContacto/>
+     {/*  <CardClienteContacto /> */}
+      <TableTestSort />
+      <FormikTest />
 
 
    
