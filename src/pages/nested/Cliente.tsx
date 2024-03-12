@@ -37,8 +37,8 @@ const Cliente: React.FC = () => {
 
         {/*---------------------------------*/}
 
-        <div className="flex flex-row  my-5 justify-between">
-          <div className="flex flex-col ">
+        <div className="flex flex-row  my-5 justify-center">
+          <div className="flex flex-col m-[5px]">
             <CardCliente
               title="Informacion"
               razon="Actividades"
@@ -52,26 +52,27 @@ const Cliente: React.FC = () => {
               notas="No hay ninguna nota o archivo adjunto"
             />
           </div>
-
-          <CardClienteTwo
-            title="Clasificacion"
-            titlesecond="Ranking"
-            ventasTotal={14.688}
-            npedidos={1}
-            feedbackcliente={0}
-            afectacion={0}
-            deudaT={0}
-            deudaV={0}
-          />
-
-          <CardClienteTwo
-            title="Proyectos"
-            titlesecond="Sin Datos"
-            aceptado={0}
-            enEspera={0}
-            enProceso={0}
-            anticipos={0}
-          />
+          <div className="flex flex-col m-[10px]">
+            <CardClienteTwo
+              title="Clasificacion"
+              titlesecond="Ranking"
+              ventasTotal={14.688}
+              npedidos={1}
+              feedbackcliente={0}
+              afectacion={0}
+              deudaT={0}
+              deudaV={0}
+            /></div>
+          <div className="flex flex-col m-[10px]">
+            <CardClienteTwo
+              title="Proyectos"
+              titlesecond="Sin Datos"
+              aceptado={0}
+              enEspera={0}
+              enProceso={0}
+              anticipos={0}
+            />
+          </div>
         </div>
         {/*---------------------------------*/}
 
