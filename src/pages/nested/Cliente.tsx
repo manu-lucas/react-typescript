@@ -3,7 +3,6 @@ import Button from "../../components/Elements/Button/Button";
 import CardCliente from "../../components/Elements/Cards/CardCliente";
 import CardClienteTwo from "../../components/Elements/Cards/CardClienteTwo";
 import CardClienteThree from "../../components/Elements/Cards/CardCLienteThree";
-import SearchSelect from "../../components/Elements/Herramientas/SearchSelect";
 import { Outlet } from "react-router-dom"; // Importa Outlet
 
 const Cliente: React.FC = () => {
@@ -19,7 +18,6 @@ const Cliente: React.FC = () => {
         </div>
 
         <div className="flex flex-row">
-          <SearchSelect />
           <Button name="+ Agregar" />
         </div>
         <div className="flex flex-row justify-evenly">
