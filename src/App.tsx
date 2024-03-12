@@ -6,7 +6,7 @@ import "./index.css";
 import Cliente from "./pages/nested/Cliente";
 import Consulta from "./pages/nested/Consultas";
 import Ecommerce from "./pages/nested/Ecommerce";
-
+import Newcliente from "./pages/nested/routeschild/NewCliente";
 
 let router = createBrowserRouter([
   {
@@ -27,6 +27,12 @@ let router = createBrowserRouter([
       {
         path: "cliente",
         element: <Cliente />,
+        children: [ // Agrega una nueva propiedad 'children' para las rutas hijas de Cliente
+          {
+            path: "nuevocliente",
+            element: <Newcliente/>,
+          },
+        ],
       },
       {
         path: "consulta",
