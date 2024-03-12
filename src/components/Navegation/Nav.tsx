@@ -14,8 +14,13 @@ const Nav: React.FC = () => {
   ];
 
   return (
-    <div className="h-screen w-60 rounded-br-full bg-gradient-to-b from-verdeFondo from-50% to-verdePie to-90%">
-      <div className=" my-28">
+    <div className="h-screen w-60 rounded-br-[200px] bg-gradient-to-b from-verdeFondo from-50% to-verdePie to-90%">
+      
+      <div><img src="..\src\assets\logo_appify.jpeg"/></div>
+
+      
+      
+      <div>
         {referencesData.map((reference, index) => (
           <Reference key={index} title={reference.name} icons={reference.rel} />
         ))}
