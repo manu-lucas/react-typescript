@@ -10,6 +10,10 @@ export const users = [
   { id: 6, vencimiento: "8/5/2023", condicion: "-", bruto: 60.000, monto_pendiente: 60.000, finalizada: false }
 ];
 
+
+
+
+
 export default function TablaClientePaginado() {
   const [page, setPage] = React.useState(1);
   const rowsPerPage = 4;
