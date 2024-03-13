@@ -24,9 +24,11 @@ const Commercial: React.FC = () => {
       <SelectPeriod />
       <CardClienteContacto razon='acaca' rut='asfdsadf' direccion='dsafads'/>
  */}     
-    <Outlet /> 
+          <div className="flex-grow"> {/* This div will take up the remaining space */}
 
+    <Outlet  /> 
 
+</div>
 </div>
   );
 };
