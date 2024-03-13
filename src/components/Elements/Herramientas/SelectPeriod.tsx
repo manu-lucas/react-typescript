@@ -49,7 +49,6 @@ const SelectPeriod = () => {
         options={periods}
   
       />
-       <div className="mt-4 text-gray-500 text-sm italic">Select a period</div>
 
     </div>
   );
