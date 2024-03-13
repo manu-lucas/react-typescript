@@ -1,5 +1,6 @@
 import React, { useState, ChangeEvent } from "react";
 import { PhoneInput } from "react-international-phone";
+import 'react-international-phone/style.css';
 
 interface InputProps {
   title: string;
@@ -19,9 +20,9 @@ const Inputs: React.FC<InputProps> = ({
   name,
 }) => {
   const [phone, setPhone] = useState<string>(""); // State for phone number
-
+console.log(phone)
   return (
-    <div className="mx-8">
+    <div className="mx-8 ">
       <h3 className="font-medium">{title}</h3>
       {name !== "celular" && name !== "telefono" && (
         <input
@@ -36,20 +37,20 @@ const Inputs: React.FC<InputProps> = ({
 
 
       {(name === "celular" || name === "telefono") && (
-        <div className="">
-          <PhoneInput
-  
-            defaultCountry="cl"
-            value={phone}
-            onChange={setPhone} // Simplificado para depuración
-            inputProps={{
-              name: "phone",
-              required: true,
-              autoFocus: true,
-            }}
-          />
-        </div>
+        <div className="w-72 h-9">
+           <PhoneInput
+        
+
+          defaultCountry="cl"
+          value={phone}
+          onChange={(phone) => setPhone(phone)}
+          inputStyle={{  width: "18rem" , borderTopRightRadius: "1rem",
+          borderBottomRightRadius: "1rem"}} // Estilos aplicados directamente al input
+
+        /> 
+           </div>
       )}
+
     </div>
   );
 };
