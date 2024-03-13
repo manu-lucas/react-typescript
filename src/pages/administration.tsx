@@ -1,5 +1,6 @@
 import React from 'react';
 import FormikTest from '../components/Elements/Tables/FormikTest';
+import Nav from '../components/Navegation/Nav';
 
 
 
@@ -8,11 +9,12 @@ const Administration
 
     
   return (
-<>
-<h2>Administration
-</h2>
-   <FormikTest/>  
-</>
+<div className='h-screen w-full bg-green-200 flex flex-row'>
+<h2>Administration</h2>
+      <FormikTest />
+      <Nav />
+      
+</div>
   );
 };
 

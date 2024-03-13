@@ -20,8 +20,8 @@ const FormikTest: React.FC<{}> = () => {
     };
 
   return (
-     <div className="container mx-auto">
-     <h1 className="text-2xl font-bold mb-4">My Example</h1>
+     <div className="container mx-auto flex justify-center">
+     {/* <h1 className="text-2xl font-bold mb-4">My Example</h1> */}
       <Formik
         initialValues={initialValues}
         onSubmit={(values, actions) => {
