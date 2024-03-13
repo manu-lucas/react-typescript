@@ -12,7 +12,7 @@ const DateSelect: React.FC = () => {
 
  
   return (
-  <div className="flex flex-col space-y-4">
+  <div className="flex flex-row ">
     <div className="flex items-center">
       <label className="mr-2">From:</label>
       <DatePicker
