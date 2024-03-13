@@ -1,7 +1,8 @@
 import React, { useState, ChangeEvent } from "react";
-import { Card, CardHeader } from "@nextui-org/react";
 import "react-international-phone/style.css";
 import Inputs from "../Inputs/Inputs";
+// import SearchSelect from "../Herramientas/SearchSelect";
+import SelectStyle from "../Herramientas/SelectNextUI";
 
 const CardClienteContacto: React.FC = () => {
   const [inputValue, setInputValue] = useState({
@@ -27,8 +28,9 @@ const CardClienteContacto: React.FC = () => {
   };
 
   return (
-    <Card className=" w-9/12	 m-5 bg-slate-400   ">
-      <CardHeader className="w-full ">
+    <div className=" w-9/12	 m-5 bg-slate-400  rounded-lg pb-3
+     ">
+      <div className="w-full ">
         <div className=" w-full ">
           <h1 className="text-lg font-bold p-4">Contacto</h1>
 
@@ -61,7 +63,7 @@ const CardClienteContacto: React.FC = () => {
               onChange={handleChange}
             />
           </div>
-          <div className="flex flex-row my-7">
+          <div className="flex flex-row my-7 ">
             <Inputs
               title="Teléfono"
               type="text"
@@ -70,10 +72,16 @@ const CardClienteContacto: React.FC = () => {
               value={inputValue.telefono}
               onChange={handleChange}
             />
+            {/* <SearchSelect /> */}
+            <SelectStyle  title="Vendedor-1"/>
+            <SelectStyle  title="Vendedor-2"/>
+
+
+
           </div>
         </div>
-      </CardHeader>
-    </Card>
+      </div>
+    </div>
   );
 };
 

@@ -20,7 +20,7 @@ const Inputs: React.FC<InputProps> = ({
   name,
 }) => {
   const [phone, setPhone] = useState<string>(""); // State for phone number
-
+console.log(phone)
   return (
     <div className="mx-8 ">
       <h3 className="font-medium">{title}</h3>
@@ -37,18 +37,18 @@ const Inputs: React.FC<InputProps> = ({
 
 
       {(name === "celular" || name === "telefono") && (
+        <div className="w-72 h-9">
            <PhoneInput
-           className=""
+        
+
           defaultCountry="cl"
           value={phone}
           onChange={(phone) => setPhone(phone)}
-          inputProps={{
-            name: "phone",
-            required: true,
-            autoFocus: true,
-            placeholder: "Celular"
-          }}
+          inputStyle={{  width: "18rem" , borderTopRightRadius: "1rem",
+          borderBottomRightRadius: "1rem"}} // Estilos aplicados directamente al input
+
         /> 
+           </div>
       )}
 
     </div>

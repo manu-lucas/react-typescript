@@ -1,4 +1,3 @@
-
 import  { useState } from 'react';
 import Select from 'react-select';
 import { clientOptions } from './data';
@@ -9,9 +8,9 @@ const SearchSelect = () => {
   const [isClearable, setIsClearable] = useState(true);
   
   return (
-    <div className="flex ">
+    <div className="flex mx-8  ">
       <Select
-        className="basic-single select w-48 absolute z-100"
+        className="  w-72   "
         classNamePrefix="select"
         defaultValue={clientOptions[0]}
         isClearable={isClearable}
@@ -19,10 +18,10 @@ const SearchSelect = () => {
         options={clientOptions}
   
       />
-
+{/* 
       <div className="text-gray-500 text-sm italic mt-4">
       
-      </div>
+      </div> */}
     </div>
 
   );
