@@ -8,6 +8,7 @@ import Consulta from "./pages/nested/Consultas";
 import Ecommerce from "./pages/nested/Ecommerce";
 import Newcliente from "./pages/nested/routeschild/NewCliente";
 import Administration from "./pages/Administration";
+import ErrorPage from "./Error";
 
 
 let router = createBrowserRouter([
@@ -15,11 +16,15 @@ let router = createBrowserRouter([
     path: "/",
     loader: () => ({ message: "Hello Data Router!" }),
     element: <LandingPage />,
+    errorElement: <ErrorPage />,
+
   },
   {
     path: "/home",
     loader: () => ({ message: "Hello Data Router!" }),
     element: <Home />,
+    errorElement: <ErrorPage />,
+
   },
   {
       path: "/administration",
