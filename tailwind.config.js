@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        '7xl': '0px 1px 21px -1px rgba(0,0,0,0.7)',
+      },
       colors: {
         'verdeFondo': '#2BD99A',
         'verdePie':'#006F76'
