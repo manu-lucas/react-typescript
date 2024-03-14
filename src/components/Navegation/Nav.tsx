@@ -26,17 +26,23 @@ const Nav: React.FC = () => {
         {
           name: "Clientes",
           rel: <FaAngleDown />,
-          path: "/comercial/cliente"
+          path: "/comercial/cliente",
+          subcategories: [{
+            name: "nuevocliente",
+            rel: <FaAngleDown />,
+            path: "/comercial/cliente/nuevocliente"
+          }]
+
         },
          {
           name: "Ecommerce",
           rel: <FaAngleDown />,
-          path: "/comercial/Ecommerce"
+          path: "/comercial/ecommerce"
         },
          {
           name: "Consultas",
           rel: <FaAngleDown />,
-          path: "/comercial/Consulta"
+          path: "/comercial/consulta"
         },
         {
           name: "Proyectos",
@@ -49,12 +55,12 @@ const Nav: React.FC = () => {
     {
       name: "Operaciones",
       rel: <FaFileSignature />,
-      path: "/Operations"
+      path: "/operations"
     },
     {
       name: "Calendario",
       rel: <FaCalendarAlt />,
-      path: "/calendario"
+      path: "/calendar"
     },
     {
       name: "Administracion",
