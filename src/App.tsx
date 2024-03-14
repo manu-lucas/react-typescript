@@ -7,12 +7,13 @@ import Cliente from "./pages/nested/Cliente";
 import Consulta from "./pages/nested/Consultas";
 import Ecommerce from "./pages/nested/Ecommerce";
 import Newcliente from "./pages/nested/routeschild/NewCliente";
+
 import Administration from "./pages/Administration";
 import ErrorPage from "./Error";
 import Operations from "./pages/Operations";
 import Calendar from "./pages/Calendar";
+import AddNewProyect from "./pages/nested/routeschild/addNewProyect";
 import Componentes from "./pages/Componentes";
-
 import MiEmpresa from "./pages/MiEmpresa";
 
 
@@ -67,6 +68,10 @@ let router = createBrowserRouter([
         {
           path: "ecommerce",
           element: <Ecommerce />,
+        },
+        {
+          path: "proyecto",
+          element:<AddNewProyect/>,
         },
     ],
   },
