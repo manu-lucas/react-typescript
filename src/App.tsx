@@ -9,6 +9,8 @@ import Ecommerce from "./pages/nested/Ecommerce";
 import Newcliente from "./pages/nested/routeschild/NewCliente";
 import Administration from "./pages/Administration";
 import ErrorPage from "./Error";
+import Operations from "./pages/Operations";
+import Calendar from "./pages/Calendar";
 
 
 let router = createBrowserRouter([
@@ -27,9 +29,19 @@ let router = createBrowserRouter([
 
   },
   {
-      path: "/administration",
-      loader: () => ({ message: "Hello Administrator!" }),
-      element: <Administration />,
+    path: "/operations",
+    loader: () => ({ message: "Hello Operator!" }),
+    element: <Operations />,
+    },
+  {
+    path: "/administration",
+    loader: () => ({ message: "Hello Administrator!" }),
+    element: <Administration />,
+  },
+  {
+    path: "/calendar",
+    loader: () => ({ message: "Hello Administrator!" }),
+    element: <Calendar />,
     },
   {
     path: "/comercial",
@@ -45,14 +57,14 @@ let router = createBrowserRouter([
           },
         ],
       },
-      {
-        path: "consulta",
-        element: <Consulta />,
-      },
-      {
-        path: "ecommerce",
-        element: <Ecommerce />,
-      },
+        {
+          path: "consulta",
+          element: <Consulta />,
+        },
+        {
+          path: "ecommerce",
+          element: <Ecommerce />,
+        },
     ],
   },
 ]);
