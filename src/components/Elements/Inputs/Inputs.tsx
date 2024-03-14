@@ -3,11 +3,11 @@ import { PhoneInput } from "react-international-phone";
 import 'react-international-phone/style.css';
 
 interface InputProps {
-  title: string;
-  type: string;
+  title?: string;
+  type?: string;
   placeholder?: string;
-  value: string;
-  name: string; // Añadir el prop 'name'
+  value?: string;
+  name?: string; // Añadir el prop 'name'
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -22,11 +22,11 @@ const Inputs: React.FC<InputProps> = ({
   const [phone, setPhone] = useState<string>(""); // State for phone number
 console.log(phone)
   return (
-    <div className="mx-8 ">
+    <div className="w-full mx-2 ">
       <h3 className="font-medium">{title}</h3>
       {name !== "celular" && name !== "telefono" && (
         <input
-          className="border-solid border-2 border-gray-400 rounded-full h-9 w-72"
+          className="border-solid border border-gray-400 rounded-full h-9 w-full text-center "
           type={type}
           placeholder={placeholder}
           value={value}
