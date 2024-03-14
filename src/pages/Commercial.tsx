@@ -11,7 +11,7 @@ const Commercial: React.FC = () => {
 
   console.log(location.pathname); 
   return (
-<div className='h-screen w-full bg-blue-200 flex flex-row'>
+<div className='h-screen w-full bg-green-200 flex flex-row'>
       <Nav />
       {
         (location.pathname==="/comercial")&&<Proyectos/>
