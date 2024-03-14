@@ -1,6 +1,7 @@
 import React from "react";
 import SelectStyle from "../Herramientas/SelectNextUI"; // Assuming this is a custom Select component
 import DateSelect from "../Herramientas/DateSelect"; // Assuming this is a custom DateSelect component
+import BarraProgreso from "./BarraPresupuesto"
 
 interface ProdcutividadProps {
     title?: string;
@@ -25,6 +26,8 @@ const CardProyecto: React.FC<propsCardProyect> = ({ titulo, numero }) => {
 };
 
 const Productividad: React.FC<ProdcutividadProps> = ({ title }) => {
+    const facturado = 70;
+  const noFacturado = 30;
     return (
         <div className="w-auto mx-8 border">
             <div className="flex flex-row justify-between">
@@ -46,8 +49,7 @@ const Productividad: React.FC<ProdcutividadProps> = ({ title }) => {
             <div>
                 <h2 >Presupuesto</h2>
                    <div className="m-5 w-auto">  
-                   <h2>sdds</h2>
-
+                <BarraProgreso facturado={facturado} noFacturado={noFacturado}/>
                     </div> 
 
             </div>
