@@ -11,9 +11,10 @@ const Administration
     
   return (
 <div className='h-screen w-full bg-green-200 flex flex-row'>
-{/* <h2>Administration</h2> */}
+      {/* <h2>Administration</h2> */}
+      <Nav />
       <FormikTest />
-      <Nav />      
+            
 </div>
   );
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field } from 'formik';
 
+
 interface MyFormValues {
   razon: string;
   rut: string;
