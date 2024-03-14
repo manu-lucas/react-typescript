@@ -64,7 +64,9 @@ const Nav: React.FC = () => {
     {
       name: "Mi Empresa",
       rel: <IoBusiness />,
+
       path: "/miempresa"
+
     }
   ];
 

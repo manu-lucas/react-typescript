@@ -4,10 +4,15 @@ import DateSelect from "../../components/Elements/Herramientas/DateSelect";
 import SelectStyle from "../../components/Elements/Herramientas/SelectNextUI";
 import Productividad from "../../components/Elements/Graficos/Productividad";
 import TablaComercialProyect from "../../components/Elements/Tables/TableComercialProyect";
+import Search from "../../components/Elements/Herramientas/Search";
+
 
 const Proyectos: React.FC = () => {
   return (
-    <div className="h-screen w-full ">      
+    <div className="h-screen w-full overflow-y-auto	 ">
+      <div className=" w-4/5	mx-auto mb-2   mt-6 rounded-3xl	 p-6 bg-white  shadow-7xl">  
+
+
       <div className="flex flex-row w-full justify-between">
         <div className="flex flex-row">
           <h2>Proyectos</h2>
@@ -31,15 +36,21 @@ const Proyectos: React.FC = () => {
           <Button name="Rechazado" />
         </div>
         <div className="flex flex-row">
+          <div className="w-52"> 
           <SelectStyle />
-          {/* <Search/> */}
+          </div>
+          <Search/>
         </div>
       </div>
       <div></div>
       <div className="w-auto h-auto m-5">
         <TablaComercialProyect />
       </div>
+
 <Productividad title="Productividad"/>
+
+</div>
+
     </div>
   );
 };

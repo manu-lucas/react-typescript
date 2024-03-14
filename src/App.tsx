@@ -11,7 +11,9 @@ import Administration from "./pages/Administration";
 import ErrorPage from "./Error";
 import Operations from "./pages/Operations";
 import Calendar from "./pages/Calendar";
+
 import MiEmpresa from "./pages/MiEmpresa";
+
 
 
 let router = createBrowserRouter([
@@ -67,6 +69,11 @@ let router = createBrowserRouter([
         },
     ],
   },
+  {
+    path: "/componentes",
+    loader: () => ({ message: "Hello Administrator!" }),
+    element: <Componentes />,
+    },
 ]);
 
 export default function App() {
