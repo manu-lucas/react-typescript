@@ -144,7 +144,7 @@ const Componentes: React.FC = () => {
         <div className='rounded-[10px] p-[10px] bg-white border solid m-[10px]'>
           <h3 className='text-red-600'>Reference</h3>
           <hr />
-          <Reference title='Etiqueta de Menú' icons=<FaAngleDown /> />
+          <Reference title='Etiqueta de Menú' icons= <FaAngleDown /> />
           <hr />
           <p>Ruta: import Reference from '../components/Elements/Reference';</p>
           <p>Componente: <code>&lt;Reference title='Etiqueta de Menú' icons= &lt;FaAngleDown/&gt; /&gt;</code></p>
@@ -157,6 +157,16 @@ const Componentes: React.FC = () => {
           <hr />
           <p>Ruta: import Login from '../components/Login/Login';</p>
           <p>Componente: <code>&lt;Login /&gt;</code></p>
+        </div>
+         <div className='rounded-[10px] p-[10px] bg-white border solid m-[10px]'>
+          <h3 className='text-red-600'>Input</h3>
+          <hr />
+          <Inputs title={'example'} type={'example'} value={'example'} name={'example'} onChange={function (event: React.ChangeEvent<HTMLInputElement>): void {
+            throw new Error('Function not implemented.');
+          } }/>
+          <hr />
+          <p>Ruta: import Login from './components/Elements/Inputs/Inputs';</p>
+          <p>Componente: <code>&lt;Inputs /&gt;</code></p>
         </div>
 
       </div>
