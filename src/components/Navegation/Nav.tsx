@@ -4,20 +4,25 @@ import { FaHome, FaCashRegister, FaFileSignature, FaCalendarAlt, FaLandmark, FaA
 import { IoBusiness } from 'react-icons/io5';
 import Reference from "../Elements/Reference"; // Import your Reference component
 
+
 interface Subcategory {
   name: string;
   path: string;
 }
 
-interface Reference {
+
+
+interface ReferencesProps {
   name: string;
   rel: JSX.Element;
   path: string;
   subcategories?: Subcategory[];
 }
 
+
 const Nav: React.FC = () => {
-  const referencesData: Reference[] = [
+  
+  const referencesData: ReferencesProps[] = [
     {
       name: "Inicio",
       rel: <FaHome />,
@@ -64,27 +69,43 @@ const Nav: React.FC = () => {
     {
       name: "Mi Empresa",
       rel: <IoBusiness />,
-
       path: "/miempresa"
 
-    }
+    },
+     /* {
+      name: "Componentes",
+      rel: <FaAdjust/>,
+      path: "/componentes"
+
+    } */
   ];
 
+  
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
 
-  const handleCategoryClick = (path: string) => {
-    // Toggle the expanded state of the category
-       setExpandedCategory(expandedCategory === path ? null : path);
 
-  };
+  const handleCategoryClick = (path: string) => {    
+    setExpandedCategory(expandedCategory === path ? null : path);  };
   
-  const renderNavItems = (references: Reference[]) => {
-    return references.map((reference, index) => (
-    
-    <li key={index}>
+  
+  const renderSubcategories = (subcategories?: Subcategory[]) => {
+    if (!subcategories) return null;
+    return (
+      <ul className="submenu">
+        {subcategories.map((subcategory, index) => (
+          <li key={index}>
+            <Link to={subcategory.path}>{subcategory.name}</Link>
+          </li>
+        ))}
+      </ul>
+    );
+  };
+
+  const renderReference = (reference: ReferencesProps) => {
+    return (
       <Link to={reference.path}>
         <div className="category" onClick={() => handleCategoryClick(reference.path)}>
-          <Reference title={reference.name} icons={reference.rel} /> {/* Use your Reference component here */}
+          <Reference title={reference.name} icons={reference.rel} />
           {reference.subcategories && (
             <span className="toggle-icon">
               {expandedCategory === reference.path ? <FaAngleUp /> : <FaAngleDown />}
@@ -92,18 +113,17 @@ const Nav: React.FC = () => {
           )}
         </div>
       </Link>
-      {(expandedCategory === reference.path || !reference.subcategories) && (
-        <ul className="submenu">
-          {reference.subcategories?.map((subcategory, subIndex) => (
-            <li key={subIndex}>
-              <Link to={subcategory.path}>{subcategory.name}</Link>
-            </li>
-          ))}
-        </ul>
-      )}
-    </li>
-  ));
-};
+    );
+  };
+
+  const renderNavItems = (references: ReferencesProps[]) => {
+    return references.map((reference, index) => (
+      <li key={index}>
+        {renderReference(reference)}
+        {expandedCategory === reference.path && renderSubcategories(reference.subcategories)}
+      </li>
+    ));
+  };
 
   return (
     <div className=" h-screen w-60 rounded-br-[200px] bg-gradient-to-b from-verdeFondo from-50% to-verdePie to-90% left-0">
