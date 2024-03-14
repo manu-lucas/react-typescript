@@ -64,12 +64,9 @@ const Nav: React.FC = () => {
     {
       name: "Mi Empresa",
       rel: <IoBusiness />,
-      path: "/mi-empresa"
-    },
-    {
-      name: "Repositorio Componentes",
-      rel: <IoBusiness />,
-      path: "/componentes"
+
+      path: "/miempresa"
+
     }
   ];
 
@@ -82,7 +79,8 @@ const Nav: React.FC = () => {
   };
   
   const renderNavItems = (references: Reference[]) => {
-  return references.map((reference, index) => (
+    return references.map((reference, index) => (
+    
     <li key={index}>
       <Link to={reference.path}>
         <div className="category" onClick={() => handleCategoryClick(reference.path)}>
@@ -108,11 +106,15 @@ const Nav: React.FC = () => {
 };
 
   return (
+    <div className=" h-screen w-60 rounded-br-[200px] bg-gradient-to-b from-verdeFondo from-50% to-verdePie to-90% left-0">
+    <div><img src="..\src\assets\logo_appify.jpeg"/></div>
+
     <nav>
       <ul>
         {renderNavItems(referencesData)}
       </ul>
-    </nav>
+      </nav>
+      </div>
   );
 };
 
