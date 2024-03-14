@@ -69,24 +69,41 @@ const AddNewProyect: React.FC = () => {
             </div>
           </div>
           <div className="my-5 w-1/2	ml-11	">
-          <div className="flex  flex-row  items-end	">  
-          <Inputs title="Neto" onChange={onChange} />
-          <Inputs title="IVA" onChange={onChange} />
-          <Inputs title="Total" onChange={onChange} />
-          <SwitchComponent/>
+            <div className="flex  flex-row  items-end	">
+              <Inputs title="Neto" onChange={onChange} />
+              <Inputs title="IVA" onChange={onChange} />
+              <Inputs title="Total" onChange={onChange} />
+              <SwitchComponent />
+            </div>
+            <div>
+              <h2>Ajuste de precio</h2>
+              <SliderGraf />
+              <h3>Subtotal : {}</h3>
+              <h3>Iva(19%) : {}</h3>
+              <h3>Total : {}</h3>
+            </div>
           </div>
-          <div>
-          <h2>Ajuste de precio</h2>
-        <SliderGraf/>
-                <h3>Subtotal : {}</h3>
-                <h3>Iva(19%) : {}</h3>
-                <h3>Total : {}</h3>
+        </div>
+
+        <div className="w-full flex flex-row">
+          
+          <div className="my-5 w-1/2	ml-11 flex flex-col	">
+          <div className="border-b border-grey-500 border-solid border"></div>
 
 
+            <h3>Direccíon de Prestación</h3>
+              <div className="w-full"> 
+              <SelectStyle title="Punto de despacho" placeholder=""/>
+              </div>
 
+              <Inputs  title="Dirección" onChange={onChange} />
           </div>
 
 
+          <div className="my-5 w-1/2	ml-11	">
+            <div className="border-b border-grey-500 border-solid border"></div>
+
+            <h3>Agendamiento</h3>
           </div>
         </div>
       </div>
