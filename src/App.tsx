@@ -16,31 +16,26 @@ import Calendar from "./pages/Calendar";
 let router = createBrowserRouter([
   {
     path: "/",
-    loader: () => ({ message: "Hello Data Router!" }),
     element: <LandingPage />,
     errorElement: <ErrorPage />,
 
   },
   {
     path: "/home",
-    loader: () => ({ message: "Hello Data Router!" }),
     element: <Home />,
     errorElement: <ErrorPage />,
 
   },
   {
     path: "/operations",
-    loader: () => ({ message: "Hello Operator!" }),
     element: <Operations />,
     },
   {
     path: "/administration",
-    loader: () => ({ message: "Hello Administrator!" }),
     element: <Administration />,
   },
   {
     path: "/calendar",
-    loader: () => ({ message: "Hello Administrator!" }),
     element: <Calendar />,
     },
   {
