@@ -11,6 +11,7 @@ import Administration from "./pages/Administration";
 import ErrorPage from "./Error";
 import Operations from "./pages/Operations";
 import Calendar from "./pages/Calendar";
+import Componentes from "./pages/Componentes";
 
 import MiEmpresa from "./pages/MiEmpresa";
 
@@ -69,7 +70,14 @@ let router = createBrowserRouter([
         },
     ],
   },
+<<<<<<< HEAD
   
+=======
+  {
+    path: "/componentes",
+    element: <Componentes />,
+    },
+>>>>>>> 68533e9434d3e47cff04259d2c4b1a402b73b04f
 ]);
 
 export default function App() {
