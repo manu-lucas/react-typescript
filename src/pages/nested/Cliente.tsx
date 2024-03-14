@@ -81,7 +81,6 @@ const Cliente: React.FC = () => {
 Estado: Aceptado"
             titleOne="Facturas Recurrentes"
           />
-
           <CardClienteThree />
         </div>
       </div>
