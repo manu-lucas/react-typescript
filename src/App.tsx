@@ -69,11 +69,7 @@ let router = createBrowserRouter([
         },
     ],
   },
-  {
-    path: "/componentes",
-    loader: () => ({ message: "Hello Administrator!" }),
-    element: <Componentes />,
-    },
+  
 ]);
 
 export default function App() {
