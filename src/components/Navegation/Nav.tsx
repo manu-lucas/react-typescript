@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaHome, FaCashRegister, FaFileSignature, FaCalendarAlt, FaLandmark } from 'react-icons/fa';
+import { FaHome, FaCashRegister, FaFileSignature, FaCalendarAlt, FaLandmark, FaAngleDown } from 'react-icons/fa';
 import { IoBusiness } from 'react-icons/io5';
 
 interface Reference {
@@ -16,7 +16,7 @@ const Nav: React.FC = () => {
     {
       name: "Inicio",
       rel: <FaHome />,
-      path: "/"
+      path: "/home"
     },
     {
       name: "Comercial",
@@ -24,9 +24,24 @@ const Nav: React.FC = () => {
       path: "/comercial",
       subcategories: [
         {
-          name: "Cliente",
-          rel: <FaCashRegister />,
+          name: "Clientes",
+          rel: <FaAngleDown />,
           path: "/comercial/cliente"
+        },
+         {
+          name: "Ecommerce",
+          rel: <FaAngleDown />,
+          path: "/comercial/Ecommerce"
+        },
+         {
+          name: "Consultas",
+          rel: <FaAngleDown />,
+          path: "/comercial/Consulta"
+        },
+        {
+          name: "Proyectos",
+          rel: <FaAngleDown />,
+          path: "/comercial"
         },
         // Add more subcategories if needed
       ]
@@ -34,7 +49,7 @@ const Nav: React.FC = () => {
     {
       name: "Operaciones",
       rel: <FaFileSignature />,
-      path: "/operaciones"
+      path: "/Operations"
     },
     {
       name: "Calendario",

@@ -40,7 +40,7 @@ const Proyectos: React.FC = () => {
         <TablaComercialProyect />
       </div>
 
-      <Productividad title="Productividad" />
+<Productividad title="Productividad"/>
     </div>
   );
 };
