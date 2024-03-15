@@ -7,6 +7,15 @@ import TablaComercialProyect from "../../components/Elements/Tables/TableComerci
 import Search from "../../components/Elements/Herramientas/Search";
 
 
+const data = [
+  { label: "Estafania", value: "default" },
+  { label: "Veronica", value: "opcion1" },
+  { label: "Juan Carlos", value: "opcion2" },
+  { label: "Lucas", value: "opcion3" },
+  { label: "Exequiel", value: "opcion4" },
+  { label: "Martin", value: "opcion5" },
+];
+
 const Proyectos: React.FC = () => {
   return (
     <div className="h-screen w-full overflow-y-auto	 ">
@@ -37,7 +46,7 @@ const Proyectos: React.FC = () => {
         </div>
         <div className="flex flex-row">
           <div className="w-52"> 
-          <SelectStyle />
+          <SelectStyle data={data}  />
           </div>
           <Search/>
         </div>
