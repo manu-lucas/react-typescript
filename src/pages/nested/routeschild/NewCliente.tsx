@@ -4,7 +4,7 @@ import CardClienteContacto from "../../../components/Elements/Cards/CardClienteC
 
 const Newcliente: React.FC = () => {
   return (
-    <div className="w-full	bg-white	 h-screen absolute top-0 z-50	 	">
+    <div className="w-full	bg-white	 h-screen absolute top-0 z-50	 overflow-y-auto 	">
    <h2 className="text-black m-5 font-semibold">Nuevo Clientes</h2>
 
 
