@@ -64,6 +64,7 @@ const Login: React.FC = () => {
                     <Field
                       type="email"
                       name="email"
+                      id="user_email" // Ensure id matches htmlFor in the label
                       placeholder="mail@mail.com"
                       className="form-input w-full"
                     />
@@ -76,6 +77,7 @@ const Login: React.FC = () => {
                       <Field
                         type="email"
                         name="email"
+                        id="user_email" // Ensure id matches htmlFor in the label
                         placeholder="mail@mail.com"
                         className="form-input w-full"
                       />
