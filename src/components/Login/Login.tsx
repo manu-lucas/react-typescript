@@ -1,133 +1,112 @@
 import React, { useState } from 'react';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+
+interface FormValues {
+  email: string;
+  password: string;
+}
 
 const Login: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [showPasswordRecovery, setShowPasswordRecovery] = useState(false);
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (validateForm()) {
-      // Handle form submission logic here
-    }
+  const initialValues: FormValues = {
+    email: '',
+    password: '',
   };
 
-  const validateForm = () => {
-    let valid = true;
-    const newErrors: { [key: string]: string } = {};
+  const [showPasswordRecovery, setShowPasswordRecovery] = useState(false);
 
-    // Email validation
-    if (!email.trim()) {
-      newErrors.email = 'Email is required';
-      valid = false;
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      newErrors.email = 'Email is invalid';
-      valid = false;
-    }
+  const validationSchema = Yup.object().shape({
+    email: Yup.string().email('Invalid email').required('Email is required'),
+    password: Yup.string().required('Password is required'),
+  });
 
-    // Password validation
-    if (!password.trim()) {
-      newErrors.password = 'Password is required';
-      valid = false;
-    }
-
-    setErrors(newErrors);
-    return valid;
+  const handleLogin = (values: FormValues, actions: any) => {
+    // Handle form submission logic here
+    console.log('Form submitted:', values);
+    actions.setSubmitting(false);
   };
 
   const handlePasswordRecovery = () => {
+    // Handle password recovery mode toggle
     setShowPasswordRecovery(true);
   };
 
-
-  const handleBackView = () => {
+  const handleBackToLogin = () => {
+    // Handle back to login form
     setShowPasswordRecovery(false);
+  };
 
+  const handleRecoverPassword = (values: FormValues) => {
+    // Handle password recovery logic here
+    console.log('Recover password for:', values.email);
   };
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-12">
-          <div className="logo">
-            <img src="/src/assets/logo.svg" alt="Logo" />
-          </div>
-          <div className="text-title">
-            <h2>Estamos contentos de verte</h2>
-          </div>
-        </div>
-        <div className="col-12">
-          <div className="card">
-            {showPasswordRecovery ? (
-              <form onSubmit={handleSubmit}>
-                <fieldset>
-                  <legend>Recuperar Contraseña</legend>
-                  <div className="form-group">
-                    <label htmlFor="user_email">Correo</label>
-                    <input
-                      className="form-control"
+    <div className="flex justify-center items-center h-screen">
+      <div className="logo">
+        <img src="/src/assets/logo.svg" alt="Logo" />
+      </div>
+      <div className="bg-white rounded p-8 shadow-md w-80">
+        <Formik
+          initialValues={initialValues}
+          validationSchema={validationSchema}
+          onSubmit={showPasswordRecovery ? handleRecoverPassword : handleLogin}
+        >
+          {({ isSubmitting }) => (
+            <Form>
+              <fieldset>
+                <legend className="text-lg font-bold mb-4">
+                  {showPasswordRecovery ? 'Recuperar contraseña' : 'Iniciar sesión'}
+                </legend>
+                {showPasswordRecovery ? (
+                  <div className="mb-4">
+                    <label htmlFor="user_email" className="block mb-1">Email</label>
+                    <Field
                       type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      id="user_email"
+                      name="email"
+                      placeholder="mail@mail.com"
+                      className="form-input w-full"
                     />
+                    <ErrorMessage name="email" component="span" className="text-red-500" />
                   </div>
-                  <div className="form-group text-right">
-                    <input
-                      type="submit"
-                      value="Recuperar Contraseña"
-                      className="btn btn-primary"
-                    />
-                  </div>
-                </fieldset>
-                <div className="text-center">
-                  <p><a onClick={handleBackView}>ya tengo contraseña</a></p>
-                </div>
-              </form>
-              
-            ) : (
-              <div>
-                <form onSubmit={handleSubmit}>
-                  <fieldset>
-                    <legend>Iniciar sesión</legend>
-                    <div className="form-group">
-                      <label htmlFor="user_email">Email</label>
-                      <input
+                ) : (
+                  <div>
+                    <div className="mb-4">
+                      <label htmlFor="user_email" className="block mb-1">Email</label>
+                      <Field
+                        type="email"
+                        name="email"
                         placeholder="mail@mail.com"
-                        className="form-control"
-                        type="text"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        id="user_email"
+                        className="form-input w-full"
                       />
-                      {errors.email && <span className="text-danger">{errors.email}</span>}
+                      <ErrorMessage name="email" component="span" className="text-red-500" />
                     </div>
-                    <div className="form-group">
-                      <label htmlFor="user_password">Contraseña</label>
-                      <div className="input-group">
-                        <input
-                          className="form-control"
-                          id="nn-password-field"
-                          type="password"
-                          value={password}
-                          onChange={(e) => setPassword(e.target.value)}
-                        />
-                      </div>
-                      {errors.password && <span className="text-danger">{errors.password}</span>}
+                    <div className="mb-4">
+                      <label htmlFor="user_password" className="block mb-1">Contraseña</label>
+                      <Field
+                        type="password"
+                        name="password"
+                        placeholder="********"
+                        className="form-input w-full"
+                      />
+                      <ErrorMessage name="password" component="span" className="text-red-500" />
                     </div>
-                    <div className="form-group">
-                      <input type="submit" value="Ingresar" className="btn btn-primary" />
-                    </div>
-                  </fieldset>
-                </form>
+                  </div>
+                )}
                 <div className="text-center">
-                  <p><a onClick={handlePasswordRecovery}>Olvidé mi contraseña</a></p>
+                  <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-400" disabled={isSubmitting}>
+                    {isSubmitting ? (showPasswordRecovery ? 'Recuperando...' : 'Ingresando...') : (showPasswordRecovery ? 'Recuperar contraseña' : 'Ingresar')}
+                  </button>
+                  {showPasswordRecovery ? (
+                    <p><button type="button" onClick={handleBackToLogin} className="text-blue-500">Ya tengo contraseña</button></p>
+                  ) : (
+                    <p><button type="button" onClick={handlePasswordRecovery} className="text-blue-500">Olvidé mi contraseña</button></p>
+                  )}
                 </div>
-              </div>
-            )}
-          </div>
-        </div>
+              </fieldset>
+            </Form>
+          )}
+        </Formik>
       </div>
     </div>
   );

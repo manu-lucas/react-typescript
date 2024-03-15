@@ -48,12 +48,14 @@ function Example() {
       { name: "Vendedor", key: "vendedor", renderCell: (sale: Sale) => <span>{sale.vendedor}</span> },
       { name: "Fecha", key: "fecha", renderCell: (sale: Sale) => <span>{new Date(sale.fecha * 1000).toLocaleDateString()}</span> },
       { name: "Monto", key: "monto", renderCell: (sale: Sale) => <span>{sale.monto}</span> },
+      { name: "Acciones", key: "acciones", renderCell: (sale: Sale) => <span>{""}</span> }
     ];
 
   return (
     <div className='h-screen w-full bg-green-200 flex flex-row'>
       <Nav />
       <Table columns={columns} data={sales} />
+
       
     </div>
 
