@@ -12,6 +12,15 @@ interface propsCardProyect {
     numero: number
 }
 
+const data = [
+    { label: "Estafania", value: "default" },
+    { label: "Veronica", value: "opcion1" },
+    { label: "Juan Carlos", value: "opcion2" },
+    { label: "Lucas", value: "opcion3" },
+    { label: "Exequiel", value: "opcion4" },
+    { label: "Martin", value: "opcion5" },
+  ];
+
 const CardProyecto: React.FC<propsCardProyect> = ({ titulo, numero }) => {
     return (
         <div className="border-solid border	border-gray-300		 rounded-md
@@ -35,7 +44,7 @@ const Productividad: React.FC<ProdcutividadProps> = ({ title }) => {
 
                 <div className="flex flex-row">
                     <div className=" w-32 h-9"> 
-                    <SelectStyle /> 
+                    <SelectStyle  data={data} /> 
                     </div>
                     <div>
                         <DateSelect /> 

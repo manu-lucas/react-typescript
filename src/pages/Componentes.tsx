@@ -21,6 +21,16 @@ import TextTareas from '../components/Elements/Inputs/TextTareas';
 import Reference from '../components/Elements/Reference';
 import Login from '../components/Login/Login';
 
+const data = [
+  { label: "Estafania", value: "default" },
+  { label: "Veronica", value: "opcion1" },
+  { label: "Juan Carlos", value: "opcion2" },
+  { label: "Lucas", value: "opcion3" },
+  { label: "Exequiel", value: "opcion4" },
+  { label: "Martin", value: "opcion5" },
+];
+
+
 const Componentes: React.FC = () => {
 
 
@@ -59,7 +69,7 @@ const Componentes: React.FC = () => {
         <div className='rounded-[10px] p-[10px] bg-white border solid m-[10px]'>
           <h3 className='text-red-600'>Cards</h3>
           <hr />
-          <Card />
+          <Card  title="Cuentas" total={0} />
           <hr />
           <p>Ruta: <code>import Card from '../components/Elements/Cards/Card';</code></p>
           <p>Componente: <code>&lt;Card /&gt;</code></p>
@@ -126,7 +136,7 @@ const Componentes: React.FC = () => {
         <div className='rounded-[10px] p-[10px] bg-white border solid m-[10px]'>
           <h3 className='text-red-600'>Select Style</h3>
           <hr />
-          <SelectStyle />
+          <SelectStyle data={data} />
           <hr />
           <p>Ruta: import SelectStyle from '../components/Elements/Herramientas/SelectNextUI'</p>
           <p>Componente: <code>&lt;SelectStyle /&gt;</code></p>

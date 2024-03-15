@@ -4,6 +4,17 @@ import Inputs from "../Inputs/Inputs";
 // import SearchSelect from "../Herramientas/SearchSelect";
 import SelectStyle from "../Herramientas/SelectNextUI";
 
+const data = [
+  { label: "Estafania", value: "default" },
+  { label: "Veronica", value: "opcion1" },
+  { label: "Juan Carlos", value: "opcion2" },
+  { label: "Lucas", value: "opcion3" },
+  { label: "Exequiel", value: "opcion4" },
+  { label: "Martin", value: "opcion5" },
+];
+
+
+
 const CardClienteContacto: React.FC = () => {
   const [inputValue, setInputValue] = useState({
     name: "",
@@ -73,8 +84,8 @@ const CardClienteContacto: React.FC = () => {
               onChange={handleChange}
             />
             {/* <SearchSelect /> */}
-            <SelectStyle  title="Vendedor-1"/>
-            <SelectStyle  title="Vendedor-2"/>
+            <SelectStyle  title="Vendedor-1" data={data} />
+            <SelectStyle  title="Vendedor-2" data={data} />
 
 
 
