@@ -53,7 +53,7 @@ function Example() {
 
   return (
     <div className='h-screen w-full bg-green-200 flex flex-row'>
-      <Nav />
+      {/* <Nav /> */}
       <Table columns={columns} data={sales} />
 
       
