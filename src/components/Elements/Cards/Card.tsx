@@ -17,10 +17,12 @@ const data = [
   { label: "Año antepasado", value: "opcion5" },
 ];
 
+
 const Card: React.FC<Props> = ({ title, total,conciliado,otros }) => {
 
+
   return (
-    <div className="w-72	 h-52 bg-white shadow-7xl rounded-3xl	 pt-5  pl-5 pr-5   min-w-64	">
+    <div className="w-80	 h-52 bg-white shadow rounded-3xl	 pt-5  pl-5 pr-5   min-w-64	">
       <div className="flex flex-row w-full justify-between">
         <h3>{title}</h3>
         <div className="w-32">
@@ -31,7 +33,11 @@ const Card: React.FC<Props> = ({ title, total,conciliado,otros }) => {
       <h3>${total}</h3>
       { title==="Documentos de venta"&& <p className="text-gray-400	">por cobrar</p>}
       {(title==="Rentabilidad") &&
-      <h2 className="bg-slate-400	 w-32 rounded-full">{conciliado}% conciliado</h2>}
+      <div> 
+      <h2 className="bg-slate-400	 w-32 rounded-full">{conciliado}% conciliado</h2>
+      
+      </div>
+      }
       {(title==="Gastos") &&
       <div>  
       <div className="flex flex-row items-center">  

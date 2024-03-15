@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import {  Link } from 'react-router-dom';
 
 interface FormValues {
   email: string;
@@ -94,9 +95,11 @@ const Login: React.FC = () => {
                   </div>
                 )}
                 <div className="text-center">
+                <Link to="/comercial"> 
+
                   <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-400" disabled={isSubmitting}>
                     {isSubmitting ? (showPasswordRecovery ? 'Recuperando...' : 'Ingresando...') : (showPasswordRecovery ? 'Recuperar contraseña' : 'Ingresar')}
-                  </button>
+                  </button></Link>
                   {showPasswordRecovery ? (
                     <p><button type="button" onClick={handleBackToLogin} className="text-blue-500">Ya tengo contraseña</button></p>
                   ) : (

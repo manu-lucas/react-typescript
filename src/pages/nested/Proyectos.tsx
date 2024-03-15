@@ -5,6 +5,7 @@ import SelectStyle from "../../components/Elements/Herramientas/SelectNextUI";
 import Productividad from "../../components/Elements/Graficos/Productividad";
 import TablaComercialProyect from "../../components/Elements/Tables/TableComercialProyect";
 import Search from "../../components/Elements/Herramientas/Search";
+import {  Link } from 'react-router-dom';
 
 
 const data = [
@@ -30,7 +31,9 @@ const Proyectos: React.FC = () => {
         </div>
         <div className="flex flex-row">
           <Button name="REPORTE" />
-          <Button name="AGREGAR" />
+          <Link to="/comercial/proyecto"> <Button name="AGREGAR"  /></Link>
+
+         
         </div>
       </div>
 
