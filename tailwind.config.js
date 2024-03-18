@@ -11,6 +11,10 @@ module.exports = {
       boxShadow: {
         '7xl': '0px 1px 21px -1px rgba(0,0,0,0.7)',
       },
+      spacing: {
+        '140': '32rem', // Esto añade una clase de utilidad `w-35rem` para aplicar un ancho de 35rem
+      }
+      ,
       colors: {
         'verdeFondo': '#2BD99A',
         'verdePie':'#006F76'
