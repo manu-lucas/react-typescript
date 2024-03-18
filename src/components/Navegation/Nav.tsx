@@ -54,7 +54,7 @@ const Nav: React.FC = () => {
     {
       name: "Operaciones",
       rel: <FaFileSignature />,
-      path: "/testing"
+      path: "/operations"
     },
     {
       name: "Calendario",
