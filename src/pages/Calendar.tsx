@@ -1,19 +1,22 @@
 import React from 'react';
-import DateSelect from '../components/Elements/Herramientas/DateSelect';
+// import DateSelect from '../components/Elements/Herramientas/DateSelect';
 import Nav from '../components/Navegation/Nav';
-/* import '../styles/App.scss' */
+import MyCalendar from "../components/Elements/FullCalendar/MyCalendar"
 
 
 
-const Calendar: React.FC = () => {
+
+
+ const Calendar: React.FC = () => {
 
     
   return (
 <div className='h-screen w-full bg-green-200 flex flex-row'>
       {/* <h2>Administration</h2> */}
       <Nav />
-      <DateSelect />
-      
+        <div className='bg-white  w-4/5 h-auto mx-auto'> 
+        <MyCalendar  />
+      </div>
       
             
 </div>
