@@ -2,20 +2,24 @@ import { useState } from "react";
 
 interface Props {
   name: string;
-  changeState?: () => void; // Utilizamos onclick en lugar de onClick
-  stateProp?: string
+  changeState?: () => void;
 }
 
-const Button: React.FC<Props> = ({ name }) => { 
+const Button: React.FC<Props> = ({ name, changeState }) => {
+  const [isActive, setIsActive] = useState(false);
 
-const [stateCondicional, setstateCondicional] = useState(false)
-
-
+  const handleClick = () => {
+    setIsActive(!isActive); // Toggle the active state
+    changeState && changeState(); // Call the changeState function if it's provided
+  };
 
   return (
-    <div className={ `border rounded-2xl inline-block px-2 text-white 
-    ${stateCondicional&&"bg-blue-500"   }  ${!stateCondicional&&"bg-slate-500"   }
-    cursor-pointer`} onClick={()=>setstateCondicional(!stateCondicional)}>
+    <div
+      className={`border rounded-2xl inline-block px-2 py-1 text-white cursor-pointer transition-colors ${
+        isActive ? "bg-blue-500 shadow-md" : "bg-slate-500"
+      }`}
+      onClick={handleClick}
+    >
       <h3>{name}</h3>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "../components/Navegation/Nav";
-import Testing from "../components/Elements/Tables/TableAdministration";
+import TableAdministration from "../components/Elements/Tables/TableAdministration";
 /* import '../styles/App.scss' */
 
 const Operations: React.FC = () => {
@@ -8,7 +8,7 @@ const Operations: React.FC = () => {
     <div className="h-screen w-full bg-green-200 flex flex-row">
       {/* <h2>Administration</h2> */}
       <Nav />
-      <Testing />
+      <TableAdministration />
     </div>
   );
 };

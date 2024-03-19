@@ -1,10 +1,8 @@
 import React from "react";
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
+import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import Table from "./Table";
 import Nav from "../../Navegation/Nav";
-import { useDateContext } from '../../Contexts/DateContext';
-
-
+import { useDateContext } from "../../Contexts/DateContext";
 
 interface Sale {
   cliente: string;
@@ -15,14 +13,15 @@ interface Sale {
   id: string;
 }
 
-
-
-
-const Testing: React.FC = () => {
+const TableAdministration: React.FC = () => {
   const { startDate, endDate } = useDateContext();
-  const queryClient = new QueryClient()
+  const queryClient = new QueryClient();
 
-  const { data: sales, isLoading, isError } = useQuery<Sale[]>("sales", async () => {
+  const {
+    data: sales,
+    isLoading,
+    isError,
+  } = useQuery<Sale[]>("sales", async () => {
     const response = await fetch("http://localhost:3030/posts");
     if (!response.ok) {
       throw new Error("Failed to fetch posts");
@@ -31,10 +30,12 @@ const Testing: React.FC = () => {
   });
 
   // Filter sales data based on start and end dates
- const filteredSales = sales ? sales.filter((sale) => {
-  const saleDate = new Date(sale.fecha * 1000);
-  return saleDate >= startDate && saleDate <= endDate;
-}) : [];
+  const filteredSales = sales
+    ? sales.filter((sale) => {
+        const saleDate = new Date(sale.fecha * 1000);
+        return saleDate >= startDate && saleDate <= endDate;
+      })
+    : [];
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -45,17 +46,43 @@ const Testing: React.FC = () => {
   }
 
   const columns = [
-    { name: "Invoice", key: "invoice", renderCell: (sale: Sale) => <span>{sale.invoice}</span> },
-    { name: "Cliente", key: "cliente", renderCell: (sale: Sale) => <span>{sale.cliente}</span> },
-    { name: "Vendedor", key: "vendedor", renderCell: (sale: Sale) => <span>{sale.vendedor}</span> },
-    { name: "Fecha", key: "fecha", renderCell: (sale: Sale) => <span>{new Date(sale.fecha * 1000).toLocaleDateString()}</span> },
-    { name: "Monto", key: "monto", renderCell: (sale: Sale) => <span>{sale.monto}</span> },
-    { name: "Acciones", key: "acciones", renderCell: (sale: Sale) => <span>{""}</span> }
+    {
+      name: "Invoice",
+      key: "invoice",
+      renderCell: (sale: Sale) => <span>{sale.invoice}</span>,
+    },
+    {
+      name: "Cliente",
+      key: "cliente",
+      renderCell: (sale: Sale) => <span>{sale.cliente}</span>,
+    },
+    {
+      name: "Vendedor",
+      key: "vendedor",
+      renderCell: (sale: Sale) => <span>{sale.vendedor}</span>,
+    },
+    {
+      name: "Fecha",
+      key: "fecha",
+      renderCell: (sale: Sale) => (
+        <span>{new Date(sale.fecha * 1000).toLocaleDateString()}</span>
+      ),
+    },
+    {
+      name: "Monto",
+      key: "monto",
+      renderCell: (sale: Sale) => <span>{sale.monto}</span>,
+    },
+    {
+      name: "Acciones",
+      key: "acciones",
+      renderCell: (sale: Sale) => <span>{""}</span>,
+    },
   ];
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className='h-screen w-full bg-green-200 flex flex-row'>
+      <div className="h-screen w-full bg-green-200 flex flex-row">
         {/* <Nav /> */}
         <Table columns={columns} data={filteredSales} />
       </div>
@@ -63,4 +90,4 @@ const Testing: React.FC = () => {
   );
 };
 
-export default Testing;
+export default TableAdministration;
