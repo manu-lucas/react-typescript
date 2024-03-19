@@ -224,6 +224,7 @@ const MyCalendar = () => {
   return (
     <div className="calendar">
       <Button name="Agregar "  changeState={handleChange}/>
+
       <div className="current-date">{formatDate(currentDate)}</div>
 
       <div className="button-container">

@@ -22,8 +22,10 @@ const Button: React.FC<Props> = ({ name, changeState }) => {
       cursor-pointer`}
       onClick={changeColorState} // Corrección aquí para asegurarse de que la función se llame correctamente
     >
+
       <h3>{name}</h3>
     </div>
+    
   );
 };
 

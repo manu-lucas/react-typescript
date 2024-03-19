@@ -13,28 +13,24 @@ import Operations from "./pages/Operations";
 import Calendar from "./pages/Calendar";
 import Componentes from "./pages/Componentes";
 import MiEmpresa from "./pages/MiEmpresa";
-import Testing from "./components/Elements/Tables/Testing";
 import AddNewProyect from "./pages/nested/routeschild/AddNewProyect";
-
-
+import Testing from "./components/Elements/Tables/TableAdministration";
 
 let router = createBrowserRouter([
   {
     path: "/",
     element: <LandingPage />,
     errorElement: <ErrorPage />,
-
   },
   {
     path: "/home",
     element: <Home />,
     errorElement: <ErrorPage />,
-
   },
   {
     path: "/operations",
     element: <Operations />,
-    },
+  },
   {
     path: "/administration",
     element: <Administration />,
@@ -43,10 +39,10 @@ let router = createBrowserRouter([
     path: "/calendar",
     element: <Calendar />,
   },
-    {
+  {
     path: "/miempresa",
-    element: <MiEmpresa/>,
-    },
+    element: <MiEmpresa />,
+  },
   {
     path: "/comercial",
     element: <Commercial />,
@@ -54,26 +50,26 @@ let router = createBrowserRouter([
       {
         path: "cliente",
         element: <Cliente />,
-        children: [ // Agrega una nueva propiedad 'children' para las rutas hijas de Cliente
+        children: [
+          // Agrega una nueva propiedad 'children' para las rutas hijas de Cliente
           {
             path: "nuevocliente",
-            element: <Newcliente/>,
+            element: <Newcliente />,
           },
         ],
       },
-        {
-          path: "consulta",
-          element: <Consulta />,
-        },
-        {
-          path: "ecommerce",
-          element: <Ecommerce />,
-        },
-        {
-          path: "proyecto",
-          element:<AddNewProyect/>,
-
-        },
+      {
+        path: "consulta",
+        element: <Consulta />,
+      },
+      {
+        path: "ecommerce",
+        element: <Ecommerce />,
+      },
+      {
+        path: "proyecto",
+        element: <AddNewProyect />,
+      },
     ],
   },
   {
@@ -83,7 +79,7 @@ let router = createBrowserRouter([
   {
     path: "/testing",
     element: <Testing />,
-    }
+  },
 ]);
 
 export default function App() {
@@ -93,5 +89,3 @@ export default function App() {
 if (import.meta.hot) {
   import.meta.hot.dispose(() => router.dispose());
 }
-
-
