@@ -1,10 +1,11 @@
 import React from "react";
 import Nav from "../components/Navegation/Nav";
-import Testing from "../components/Elements/Tables/Testing";
+import Testing from "../components/Elements/Tables/TableAdministration";
 import SearchSelect from "../components/Elements/Herramientas/SearchSelect";
 import DateSelect from "../components/Elements/Herramientas/DateSelect";
 import Search from "../components/Elements/Herramientas/Search";
 import Button from "../components/Elements/Button/Button";
+import Transaction from "../components/Elements/Tables/Transaction";
 
 const Administration: React.FC = () => {
   return (
@@ -25,6 +26,7 @@ const Administration: React.FC = () => {
           <Button name={"RECURRENTES"} />
         </div>
         <Testing />
+        <Transaction />
       </div>
     </div>
   );
