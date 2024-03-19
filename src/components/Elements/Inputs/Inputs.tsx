@@ -8,7 +8,7 @@ interface InputProps {
   placeholder?: string;
   value?: string;
   name?: string; // Añadir el prop 'name'
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Inputs: React.FC<InputProps> = ({

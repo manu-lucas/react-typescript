@@ -13,11 +13,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "@date-io/date-fns": "^3.0.0",
     "@nextui-org/button": "^2.0.27",
     "@nextui-org/react": "^2.2.10",
     "@nextui-org/system": "^2.0.15",
     "@nextui-org/theme": "^2.1.18",
     "bootstrap": "^5.3.3",
+    "date-fns": "^3.6.0",
     "dayjs": "^1.11.10",
     "formik": "^2.4.5",
     "framer-motion": "^11.0.8",

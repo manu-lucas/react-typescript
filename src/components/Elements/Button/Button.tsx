@@ -10,6 +10,8 @@ const Button: React.FC<Props> = ({ name }) => {
 
 const [stateCondicional, setstateCondicional] = useState(false)
 
+
+
   return (
     <div className={ `border rounded-2xl inline-block px-2 text-white 
     ${stateCondicional&&"bg-blue-500"   }  ${!stateCondicional&&"bg-slate-500"   }
