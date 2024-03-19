@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {Accordion, AccordionItem} from "@nextui-org/react";
+import { Accordion, AccordionItem } from "@nextui-org/react";
 
 import moment from "moment";
 import "moment/locale/es"; // Importa la localización en español
@@ -174,25 +174,21 @@ const Agendamiento = () => {
           <TextTareas title="Notas" />
         </div>
 
-        <Accordion >
-        <AccordionItem key="1" aria-label="Accordion 1"  title={<Button name="Agregar Dirección" />}>
+        <Accordion>
+          <AccordionItem
+            key="1"
+            aria-label="Accordion 1"
+            title={<Button name="Agregar Dirección" />}
+          >
             <div className="w-full flex flex-row">
-              <Inputs title="Dirección"  placeholder="Ej: Av.Suecia 243"/>
-              <Inputs title="Comuna"   placeholder="Ej:Providencia"/>
+              <Inputs title="Dirección" placeholder="Ej: Av.Suecia 243" />
+              <Inputs title="Comuna" placeholder="Ej:Providencia" />
               <Inputs title="Ciudad" placeholder="Ej:Santiago" />
-
-
-
-
-
-
             </div>
           </AccordionItem>
         </Accordion>
-        <Button name="Crear"/>
-
+        <Button name="Crear" />
       </div>
-
     </div>
   );
 };
@@ -211,14 +207,13 @@ const MyCalendar = () => {
     setCurrentDate((prevDate) => moment(prevDate).add(1, "days").toDate());
   };
 
-// function onChange(){
+  // function onChange(){
 
-// }
-
+  // }
 
   return (
     <div className="calendar">
-      <Button name="Agregar "  />
+      <Button name="Agregar " />
       <div className="current-date">{formatDate(currentDate)}</div>
 
       <div className="button-container">
