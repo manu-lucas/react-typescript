@@ -4,7 +4,7 @@ const Consulta: React.FC = () => {
 
     
   return (
-<div >
+<div className="w-85		h-screen	 overflow-y-auto	">
 <h2>Consultaaaaaaaaaaaa</h2>
 
 </div>

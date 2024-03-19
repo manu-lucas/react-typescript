@@ -1,21 +1,15 @@
-import React from 'react';
-import Nav from '../components/Navegation/Nav';
-import Testing from '../components/Elements/Tables/Testing';
+import React from "react";
+import Nav from "../components/Navegation/Nav";
+import TableAdministration from "../components/Elements/Tables/TableAdministration";
 /* import '../styles/App.scss' */
 
-
-
 const Operations: React.FC = () => {
-
-    
   return (
-<div className='h-screen w-full bg-green-200 flex flex-row'>
+    <div className="h-screen w-full bg-green-200 flex flex-row">
       {/* <h2>Administration</h2> */}
       <Nav />
-      <Testing />
-      
-            
-</div>
+      <TableAdministration />
+    </div>
   );
 };
 
