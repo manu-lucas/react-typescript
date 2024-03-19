@@ -94,15 +94,15 @@ const CardClienteDGeneral: React.FC = () => {
       <Accordion className="m-4 font-bold">
         <AccordionItem
         className=" font-bold"
-          key="2"
-          aria-label="Accordion 2"
+          key="1"
+          aria-label="Accordion 1"
+        
           title={
         <h2 className="border w-48 rounded-full	 bg-slate-50 absolute right-5 text-xs	 ">
-         Campos Avanzados
+         Campos Avanzados  
         </h2>
-      }
         
-        >
+      }>
           <div>
             <div className="flex flex-row">
               <Inputs
