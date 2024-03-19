@@ -11,11 +11,9 @@ import Administration from "./pages/Administration";
 import ErrorPage from "./Error";
 import Operations from "./pages/Operations";
 import Calendar from "./pages/Calendar";
-import AddNewProyect from "./pages/nested/routeschild/addNewProyect";
 import Componentes from "./pages/Componentes";
 import MiEmpresa from "./pages/MiEmpresa";
 import Testing from "./pages/Testing";
-import Nav2 from "./components/Navegation/Nav2";
 
 
 
@@ -73,6 +71,7 @@ let router = createBrowserRouter([
         {
           path: "proyecto",
           element:<AddNewProyect/>,
+
         },
     ],
   },

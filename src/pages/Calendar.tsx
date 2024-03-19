@@ -11,10 +11,10 @@ import MyCalendar from "../components/Elements/FullCalendar/MyCalendar"
 
     
   return (
-<div className='h-screen w-full bg-green-200 flex flex-row'>
+<div className='h-screen w-full bg-white flex flex-row'>
       {/* <h2>Administration</h2> */}
       <Nav />
-        <div className='bg-white  w-4/5 h-auto mx-auto'> 
+        <div className='  w-4/5 h-auto mx-auto'> 
         <MyCalendar  />
       </div>
       

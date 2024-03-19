@@ -3,9 +3,9 @@ import React, { ChangeEvent } from 'react';
 interface TextTareasProps {
   title: string;
   placeholder?: string;
-  value: string;
-  name: string; // Añadir el prop 'name'
-  onChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+  value?: string;
+  name?: string; // Añadir el prop 'name'
+  onChange?: (event: ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 const TextTareas: React.FC<TextTareasProps> = ({ title, placeholder, value, onChange, name }) => {

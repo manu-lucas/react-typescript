@@ -64,7 +64,29 @@ const Nav: React.FC = () => {
     {
       name: "Administracion",
       rel: <FaLandmark />,
-      path: "/administration"
+      path: "/administration",
+      subcategories: [
+        {
+          name: "Ventas",
+          path: "/administration"
+        },
+        {
+          name: "Compras",
+          path: "/administration"
+        },
+        {
+          name: "Pagos",
+          path: "/administration"
+        },
+        {
+          name: "Cobros",
+          path: "/administration"
+        },
+        {
+          name: "Cuentas",
+          path: "/administration"
+        }
+      ]
     },
     {
       name: "Mi Empresa",
