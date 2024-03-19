@@ -5,7 +5,6 @@ import SwitchComponent from "../../../components/Elements/Button/Switch";
 import SliderGraf from "../../../components/Elements/Graficos/SliderGraf";
 // import CardClienteDGeneral  from "../../../components/Elements/Cards/CardClienteDGeneral";
 
-
 const data = [
   { label: "Estafania", value: "default" },
   { label: "Veronica", value: "opcion1" },
@@ -14,7 +13,6 @@ const data = [
   { label: "Exequiel", value: "opcion4" },
   { label: "Martin", value: "opcion5" },
 ];
-
 
 
 const AddNewProyect: React.FC = () => {
@@ -101,7 +99,6 @@ const AddNewProyect: React.FC = () => {
           
           <div className="my-5 w-1/2	ml-11 flex flex-col	">
           <div className="border-b border-grey-500 border-solid border"></div>
-
 
             <h3>Direccíon de Prestación</h3>
               <div className="w-full"> 

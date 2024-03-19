@@ -11,10 +11,10 @@ import Administration from "./pages/Administration";
 import ErrorPage from "./Error";
 import Operations from "./pages/Operations";
 import Calendar from "./pages/Calendar";
-import AddNewProyect from "./pages/nested/routeschild/addNewProyect";
 import Componentes from "./pages/Componentes";
 import MiEmpresa from "./pages/MiEmpresa";
 import Testing from "./components/Elements/Tables/Testing";
+import AddNewProyect from "./pages/nested/routeschild/addNewProyect";
 
 
 
@@ -72,6 +72,7 @@ let router = createBrowserRouter([
         {
           path: "proyecto",
           element:<AddNewProyect/>,
+
         },
     ],
   },
