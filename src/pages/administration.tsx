@@ -18,7 +18,7 @@ const Administration
 <div className='h-screen w-full bg-green-200 flex flex-row'>
   <Nav /> {/* Render Nav component on the left side */}
   
-      <div className="flex flex-col w-full"> {/* Create a column layout for the remaining content */}
+      <div className="flex flex-col w-85"> {/* Create a column layout for the remaining content */}
         <div className='h-screen w-full bg-green-200 flex flex-row'>
         
           <DateSelect />

@@ -28,7 +28,7 @@ const AddNewProyect: React.FC = () => {
   function onChange() {}
 
   return (
-    <div className="h-screen w-full overflow-y-auto	 ">
+    <div className="h-screen w-85 overflow-y-auto	 ">
       <div className=" w-4/5	mx-auto mb-2   mt-6 rounded-3xl	 p-6 bg-white  shadow-7xl">
         <div className="flex flex-row">
           <h2 className="mr-5">Proyectos</h2>

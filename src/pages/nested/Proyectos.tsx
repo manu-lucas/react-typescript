@@ -19,7 +19,7 @@ const data = [
 
 const Proyectos: React.FC = () => {
   return (
-    <div className="h-screen w-full overflow-y-auto	 ">
+    <div className="h-screen w-85 overflow-y-auto	 ">
       <div className=" w-4/5	mx-auto mb-2   mt-6 rounded-3xl	 p-6 bg-white  shadow-7xl">  
 
 

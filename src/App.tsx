@@ -15,6 +15,7 @@ import AddNewProyect from "./pages/nested/routeschild/addNewProyect";
 import Componentes from "./pages/Componentes";
 import MiEmpresa from "./pages/MiEmpresa";
 import Testing from "./pages/Testing";
+import Nav2 from "./components/Navegation/Nav2";
 
 
 
@@ -82,7 +83,11 @@ let router = createBrowserRouter([
   {
     path: "/testing",
     element: <Testing />,
-    }
+    },
+  {
+    path: "/nav2",
+    element: <Nav2 />,
+  }
 ]);
 
 export default function App() {
