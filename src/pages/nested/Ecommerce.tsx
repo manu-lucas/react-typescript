@@ -5,7 +5,7 @@ import CardClienteDGeneral from '../../components/Elements/Cards/CardClienteDGen
 
 const Ecommerce: React.FC  = () => {
   return (
-    <div>
+    <div className="w-85		h-screen	 overflow-y-auto	">
       <h2>e-commerce</h2>
       {/* <SearchSelect />
       <Search/> */}

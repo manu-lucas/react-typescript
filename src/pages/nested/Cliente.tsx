@@ -8,7 +8,7 @@ import {  Link } from 'react-router-dom';
 
 const Cliente: React.FC = () => {
   return (
-    <div className="w-full		h-screen	 overflow-y-auto	">
+    <div className="w-85		h-screen	 overflow-y-auto	">
       <div
         className=" w-10/12		h-screen  mx-auto
       "

@@ -156,10 +156,8 @@ const Nav: React.FC = () => {
   };
 
   return (
-    <div className=" h-screen w-60 rounded-br-[200px] bg-gradient-to-b from-verdeFondo from-50% to-verdePie to-90% left-0">
-      <div>
-        <img src="..\src\assets\logo_appify.jpeg" />
-      </div>
+    <div className=" h-screen w-15 rounded-br-[200px] bg-gradient-to-b from-verdeFondo from-50% to-verdePie to-90% left-0">
+    <div><img src="..\src\assets\logo_appify.jpeg"/></div>
 
       <nav>
         <ul>{renderNavItems(referencesData)}</ul>

@@ -27,6 +27,7 @@ const SelectStyle: React.FC<SelectProps> = ({ title, data }) => {
     <div className="w-full h-full">  
       <div className="flex w-full max-w-xs flex-col gap-2">
         <Select
+         aria-label={title || "Select option"}
                label={title}
                variant="bordered"
                placeholder="Select"

@@ -84,9 +84,9 @@ const Nav2: React.FC = () => {
       path: '',
       subcategories: [
         { name: 'Proyectos', path: '/comercial/proyectos' },
-        { name: 'Consultas', path: '/comercial/consultas' },
-        { name: 'E-Commerce', path: '/comercial/e-commerce' },
-        { name: 'Clientes', path: '/comercial/clientes' },
+        { name: 'Consultas', path: '/comercial/consulta' },
+        { name: 'E-Commerce', path: '/comercial/ecommerce' },
+        { name: 'Clientes', path: '/comercial/cliente' },
         { name: 'Satisfacción', path: '/comercial/satisfaccion' },
       ],
     },
