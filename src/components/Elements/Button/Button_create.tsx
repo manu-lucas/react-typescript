@@ -6,20 +6,17 @@ interface Props {
   stateProp?: string
 }
 
-const Button: React.FC<Props> = ({ name }) => { 
+const ButtonCreate: React.FC<Props> = ({ name }) => { 
 
 const [stateCondicional, setstateCondicional] = useState(false)
 
-
-
   return (
-    <div className={ `border rounded-2xl inline-block px-2 text-white m-50
-    ${stateCondicional&&"bg-blue-500"   }  ${!stateCondicional&&"bg-slate-500"   }
+    <div className={ ` float-start ml-5 border rounded-2xl inline-block px-2 text-white p-2
+    ${stateCondicional&&"bg-verdeFondo"   }  ${!stateCondicional&&"bg-verdePie"   }
     cursor-pointer`} onClick={()=>setstateCondicional(!stateCondicional)}>
       <h3>{name}</h3>
     </div>
-    
   );
 };
 
-export default Button;
+export default ButtonCreate;

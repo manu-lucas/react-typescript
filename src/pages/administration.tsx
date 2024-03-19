@@ -9,11 +9,13 @@ import Transaction from "../components/Elements/Tables/Transaction";
 
 const Administration: React.FC = () => {
   return (
-    <div className="h-screen w-full  bg-green-200 flex flex-row ">
-      <Nav />
-      <div className="flex flex-col w-full p-10">
-        {" "}
-        <div className="h-screen w-full bg-green-200 flex flex-row ">
+
+<div className='h-screen w-full bg-green-200 flex flex-row'>
+  <Nav /> {/* Render Nav component on the left side */}
+  
+      <div className="flex flex-col w-full"> {/* Create a column layout for the remaining content */}
+        <div className='h-screen w-full bg-green-200 flex flex-row'>
+        
           <DateSelect />
         </div>
         <div className="h-screen w-full bg-green-200 flex flex-row p-10">
