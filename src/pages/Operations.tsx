@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from '../components/Navegation/Nav';
-import Testing from './Testing';
+import Testing from '../components/Elements/Tables/Testing';
 /* import '../styles/App.scss' */
 
 
