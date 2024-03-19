@@ -14,7 +14,7 @@ import Calendar from "./pages/Calendar";
 import Componentes from "./pages/Componentes";
 import MiEmpresa from "./pages/MiEmpresa";
 import Testing from "./components/Elements/Tables/Testing";
-import AddNewProyect from "./pages/nested/routeschild/addNewProyect";
+import AddNewProyect from "./pages/nested/routeschild/AddNewProyect";
 
 
 

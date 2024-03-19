@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {Accordion, AccordionItem} from "@nextui-org/react";
+import { Accordion, AccordionItem } from "@nextui-org/react";
 
 import moment from "moment";
 import "moment/locale/es"; // Importa la localización en español
@@ -129,10 +129,13 @@ const cliente = [
   { label: "Cliente A", value: "15" },
   { label: "Cliente B", value: "30" },
 ];
+interface PropsAgendamiento {
+  changeState?: () => void; // Se sugiere que esta prop pueda ser opcional
+}
 
-const Agendamiento = () => {
+const Agendamiento: React.FC<PropsAgendamiento>  = ({changeState}) => {
   return (
-    <div className="w-full absolute h-screen right-0 top-0 bg-gray-600">
+<div className="w-full  absolute h-screen right-0 top-0 bg-gray-700 bg-opacity-30  backdrop-blur-sm">
       <div className="w-140  bg-white mx-auto mt-10 rounded-3xl p-4">
         <h3>Agendamiento</h3>
 
@@ -174,25 +177,23 @@ const Agendamiento = () => {
           <TextTareas title="Notas" />
         </div>
 
-        <Accordion >
-        <AccordionItem key="1" aria-label="Accordion 1"  title={<Button name="Agregar Dirección" />}>
+        <Accordion>
+          <AccordionItem
+            key="1"
+            aria-label="Accordion 1"
+            title={<Button name="Agregar Dirección" />}
+          >
             <div className="w-full flex flex-row">
-              <Inputs title="Dirección"  placeholder="Ej: Av.Suecia 243"/>
-              <Inputs title="Comuna"   placeholder="Ej:Providencia"/>
+              <Inputs title="Dirección" placeholder="Ej: Av.Suecia 243" />
+              <Inputs title="Comuna" placeholder="Ej:Providencia" />
               <Inputs title="Ciudad" placeholder="Ej:Santiago" />
-
-
-
-
-
-
             </div>
           </AccordionItem>
         </Accordion>
-        <Button name="Crear"/>
+        <Button name="Crear" />
+        <Button name="Cerrar" changeState={changeState} />
 
       </div>
-
     </div>
   );
 };
@@ -201,7 +202,12 @@ const Agendamiento = () => {
 
 const MyCalendar = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
-  // const [state, setState] = useState<boolean>(false);
+  const [parentState, setParentState] = useState(false);
+
+  const handleChange = () => {
+    setParentState(!parentState);
+
+  };
 
   const handleDecreaseDay = () => {
     setCurrentDate((prevDate) => moment(prevDate).subtract(1, "days").toDate());
@@ -211,14 +217,13 @@ const MyCalendar = () => {
     setCurrentDate((prevDate) => moment(prevDate).add(1, "days").toDate());
   };
 
-// function onChange(){
+  // function onChange(){
 
-// }
-
+  // }
 
   return (
     <div className="calendar">
-      <Button name="Agregar "  />
+      <Button name="Agregar "  changeState={handleChange}/>
       <div className="current-date">{formatDate(currentDate)}</div>
 
       <div className="button-container">
@@ -246,8 +251,10 @@ const MyCalendar = () => {
       </div>
 
       {/*---------------------------------------------------*/}
+                {
+                  parentState&&<Agendamiento  changeState={handleChange}/>
 
-      <Agendamiento />
+                }
     </div>
   );
 };
