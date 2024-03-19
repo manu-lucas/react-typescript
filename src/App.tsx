@@ -13,8 +13,8 @@ import Operations from "./pages/Operations";
 import Calendar from "./pages/Calendar";
 import Componentes from "./pages/Componentes";
 import MiEmpresa from "./pages/MiEmpresa";
-import AddNewProyect from "./pages/nested/routeschild/AddNewProyect";
-import Testing from "./components/Elements/Tables/TableAdministration";
+import TableAdministration from "./components/Elements/Tables/TableAdministration";
+import AddNewProyect from "./pages/nested/routeschild/addNewProyect";
 
 let router = createBrowserRouter([
   {
@@ -77,8 +77,8 @@ let router = createBrowserRouter([
     element: <Componentes />,
   },
   {
-    path: "/testing",
-    element: <Testing />,
+    path: "/TableAdministration",
+    element: <TableAdministration />,
   },
 ]);
 
