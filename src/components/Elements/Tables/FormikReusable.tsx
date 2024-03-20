@@ -43,7 +43,7 @@ const FormikReusable: React.FC<FormProps> = ({ fields, onSubmit }) => {
             disabled={isSubmitting}
             className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
-            {isSubmitting ? "Submitting..." : "Submit"}
+            {isSubmitting ? "Creando..." : "Crear"}
           </button>
         </Form>
       )}

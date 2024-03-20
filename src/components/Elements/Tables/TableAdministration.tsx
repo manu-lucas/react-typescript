@@ -13,7 +13,13 @@ interface Sale {
   id: string;
 }
 
-const TableAdministration: React.FC = () => {
+interface TableAdministrationProps {
+  searchValue: string;
+}
+
+const TableAdministration: React.FC<TableAdministrationProps> = ({
+  searchValue,
+}) => {
   const { startDate, endDate } = useDateContext();
   const queryClient = new QueryClient();
 
@@ -33,7 +39,14 @@ const TableAdministration: React.FC = () => {
   const filteredSales = sales
     ? sales.filter((sale) => {
         const saleDate = new Date(sale.fecha * 1000);
-        return saleDate >= startDate && saleDate <= endDate;
+        const searchTerm = searchValue.toLowerCase();
+        return (
+          saleDate >= startDate &&
+          saleDate <= endDate &&
+          (sale.cliente.toLowerCase().includes(searchTerm) ||
+            sale.invoice.toLowerCase().includes(searchTerm) ||
+            sale.vendedor.toLowerCase().includes(searchTerm))
+        );
       })
     : [];
 
