@@ -1,5 +1,4 @@
 import React from "react";
-import Ventas from "./Ventas";
 import Cobros from "./Cobros";
 
 const Pagos: React.FC = () => {
