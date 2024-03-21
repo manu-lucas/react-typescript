@@ -1,25 +1,24 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
-    "skipLibCheck": true,
+    "esModuleInterop": true, // Simplifies interoperability between CommonJS and ES6 modules
+    "skipLibCheck": true, // Skip type checking of all declaration files in node_modules to improve build performance
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
+    "moduleResolution": "node", // Use Node.js-style module resolution, suitable for bundlers like Webpack or Rollup
     "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
+    "resolveJsonModule": true, // Allows importing JSON files as modules
+    "isolatedModules": true, // Ensure each file is treated as a separate module to enable faster builds
+    "noEmit": true, // Disable emitting output files, useful for type-checking only builds
+    "jsx": "react-jsx", // Specify JSX syntax for React development
 
     /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "strict": true, // Enable all strict type-checking options
+    "noUnusedLocals": true, // Report error on unused local variables
+    "noUnusedParameters": true, // Report error on unused function parameters
+    "noFallthroughCasesInSwitch": true // Report error when switch case may fall through
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src"] // Include only the 'src' directory for TypeScript compilation
 }
