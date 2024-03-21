@@ -19,6 +19,8 @@ import Compras from "./pages/nested/Administration/Compras";
 import Pagos from "./pages/nested/Administration/Pagos";
 import Cobros from "./pages/nested/Administration/Cobros";
 import Cuentas from "./pages/nested/Administration/Cuentas";
+import TerminosyCondiciones from "./pages/TerminosyCondiciones";
+import CreaContrasena from "./pages/CreaContrasena";
 
 let router = createBrowserRouter([
   {

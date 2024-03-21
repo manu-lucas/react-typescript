@@ -48,7 +48,7 @@ const Ventas: React.FC = () => {
   return (
     <div className="h-screen w-full bg-green-200 flex flex-row">
       <Nav />
-      <div className="flex flex-col w-full p-10">
+      <div className="flex flex-col w-85 p-10">
         <div className="h-screen w-full bg-green-200 flex flex-row">
           <DateSelect />
           <div className="h-5">
