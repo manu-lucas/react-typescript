@@ -15,6 +15,7 @@ import MiEmpresa from "./pages/MiEmpresa";
 import TableAdministration from "./components/Elements/Tables/TableAdministration";
 import AddNewProyect from "./pages/nested/routeschild/AddNewProyect";
 import Administration from "./pages/Administration";
+import TerminosyCondiciones from "./pages/TerminosyCondiciones";
 
 let router = createBrowserRouter([
   {
@@ -79,6 +80,10 @@ let router = createBrowserRouter([
   {
     path: "/TableAdministration",
     element: <TableAdministration />,
+  },
+  {
+    path: "/terminos-y-condiciones",
+    element: <TerminosyCondiciones />,
   },
 ]);
 
