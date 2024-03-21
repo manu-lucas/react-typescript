@@ -1,5 +1,6 @@
 import React from "react";
 import { dataPermiso } from "../../components/Elements/Herramientas/data";
+import { Accordion, AccordionItem } from "@nextui-org/react";
 
 console.log(dataPermiso.permisos);
 interface DatosProps {
@@ -62,7 +63,7 @@ function MyTableEmpresa() {
           </thead>
           <tbody>
             <tr key={index} className="border-b">
-              <td  colSpan={3}className=" py-2 px-4 text-left border w-40">
+              <td colSpan={3} className=" py-2 px-4 text-left border w-40">
                 <h3>{e.subcategoria}</h3>
               </td>
               <td colSpan={0} className="py-2 px-4 text-center  text-sm border">
@@ -107,42 +108,95 @@ const Myperfil: React.FC = () => {
     <div className="w-full mx-auto    overflow-y-auto">
       <div className=" w-3/4 mx-auto">
         <MyDatos {...employeeData} />{" "}
-        {/* Spread operator for concise data passing */}
-        <table className="w-full mt-9  table-auto 	">
-          <thead>
-            <tr className="bg-blue-500 text-white">
-              <th colSpan={3} className="py-2 px-4 text-left">
-                Módulo
-              </th>
-              <th colSpan={3} className="py-2 px-4 text-center">
-                Permiso
-              </th>
-              <th colSpan={3} className="py-2 px-4 text-center">
-                Visualización
-              </th>
-            </tr>
-            <tr className="bg-white  ">
-              <th colSpan={3} className="py-2 px-4 text-left border w-40"></th>
-              <th colSpan={0} className="py-2 px-4 text-left text-sm	 border	">
-                Inactivo
-              </th>
-              <th colSpan={0} className="py-2 px-4 text-left  text-sm border">
-                Solo Ver
-              </th>
-              <th colSpan={0} className="py-2 px-4 text-left  text-sm border">
-                Administrar
-              </th>
-              <th colSpan={0} className="py-2 px-4 text-left  text-sm border">
-                Todo
-              </th>
-              <th colSpan={0} className="py-2 px-4 text-left  text-sm border">
-                Propietario
-              </th>
-            </tr>
-          </thead>
-          {/* Si tienes filas de datos, deberían ir dentro de un <tbody> aquí */}
-        </table>
-        <MyTableEmpresa />
+        <Accordion className="m-4 font-bold">
+          <AccordionItem
+            className=" font-bold  bg-white rounded-3xl px-6"
+            key="1"
+            aria-label="Accordion 1"
+            title={"Permisos"}
+          >
+            <table className="w-full mt-9  table-auto 	">
+              <thead>
+                <tr className="bg-blue-500 text-white">
+                  <th colSpan={3} className="py-2 px-4 text-left">
+                    Módulo
+                  </th>
+                  <th colSpan={3} className="py-2 px-4 text-center">
+                    Permiso
+                  </th>
+                  <th colSpan={3} className="py-2 px-4 text-center">
+                    Visualización
+                  </th>
+                </tr>
+                <tr className="bg-white  ">
+                  <th
+                    colSpan={3}
+                    className="py-2 px-4 text-left border w-40"
+                  ></th>
+                  <th
+                    colSpan={0}
+                    className="py-2 px-4 text-left text-sm	 border	"
+                  >
+                    Inactivo
+                  </th>
+                  <th
+                    colSpan={0}
+                    className="py-2 px-4 text-left  text-sm border"
+                  >
+                    Solo Ver
+                  </th>
+                  <th
+                    colSpan={0}
+                    className="py-2 px-4 text-left  text-sm border"
+                  >
+                    Administrar
+                  </th>
+                  <th
+                    colSpan={0}
+                    className="py-2 px-4 text-left  text-sm border"
+                  >
+                    Todo
+                  </th>
+                  <th
+                    colSpan={0}
+                    className="py-2 px-4 text-left  text-sm border"
+                  >
+                    Propietario
+                  </th>
+                </tr>
+              </thead>
+              {/* Si tienes filas de datos, deberían ir dentro de un <tbody> aquí */}
+            </table>
+            <MyTableEmpresa />
+          </AccordionItem>
+        </Accordion>
+        <Accordion className="m-4 font-bold">
+          <AccordionItem
+            className=" font-bold  bg-white rounded-3xl px-6"
+            key="1"
+            aria-label="Accordion 1"
+            title={"Restricción de descuentos"}
+          >
+          <h4>Máximo dscto productos s/inventario</h4>
+          <h2>100%</h2>
+
+
+          </AccordionItem>
+        </Accordion>
+
+        <Accordion className="m-4 font-bold">
+          <AccordionItem
+            className=" font-bold  bg-white rounded-3xl px-6"
+            key="1"
+            aria-label="Accordion 1"
+            title={"Horario Usuario"}
+          >
+          <h4></h4>
+          <h2>100%</h2>
+
+
+          </AccordionItem>
+        </Accordion>
       </div>
     </div>
   );
