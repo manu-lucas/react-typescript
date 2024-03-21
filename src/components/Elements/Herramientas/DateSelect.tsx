@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css"; // Import default styles
 import "tailwindcss/tailwind.css"; // Import Tailwind CSS styles
-import { useDateContext } from '../../Contexts/DateContext';
-
-
+import { useDateContext } from "../../Contexts/DateContext";
 
 const DateSelect: React.FC = () => {
   const { startDate, endDate, setStartDate, setEndDate } = useDateContext();
