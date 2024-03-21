@@ -10,7 +10,7 @@ const Administration: React.FC = () => {
   return (
     <div className="h-screen w-full bg-green-200 flex flex-row">
       <Nav />
-      {location.pathname === "/admnistration" && <Ventas />}
+      {location.pathname === "/administration" && <Ventas />}
 
       <div className="flex-grow">
         {" "}

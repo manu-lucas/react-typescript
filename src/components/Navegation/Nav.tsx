@@ -127,7 +127,7 @@ const Nav: React.FC = () => {
     return (
       <Link to={reference.path}>
         <div
-          className="category"
+          className="category flex items-center justify-between p-2 cursor-pointer"
           onClick={() => handleCategoryClick(reference.path)}
         >
           <Reference title={reference.name} icons={reference.rel} />
@@ -156,7 +156,7 @@ const Nav: React.FC = () => {
   };
 
   return (
-    <div className=" h-screen w-15 rounded-br-[200px] bg-gradient-to-b from-verdeFondo from-50% to-verdePie to-90% left-0">
+    <div className="bg-gradient-to-b from-verdeFondo from-50% to-verdePie to-90% h-screen w-15 rounded-br-[200px]">
       <div>
         <img src="..\src\assets\logo_appify.jpeg" />
       </div>
