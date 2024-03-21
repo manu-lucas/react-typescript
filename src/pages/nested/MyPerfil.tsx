@@ -1,5 +1,7 @@
-import React from 'react';
+import React from "react";
+import { dataPermiso } from "../../components/Elements/Herramientas/data";
 
+console.log(dataPermiso.permisos);
 interface DatosProps {
   name: string;
   email: string;
@@ -9,131 +11,139 @@ interface DatosProps {
   status: string;
 }
 
-function MyDatos({ name, email, phone, cargo, fnacimiento, status }: DatosProps) {
+function MyDatos({
+  name,
+  email,
+  phone,
+  cargo,
+  fnacimiento,
+  status,
+}: DatosProps) {
   return (
     <div className="flex flex-row bg-slate-50 rounded-3xl p-4 items-center space-x-4">
-    <div className='w-20 h-20 bg-slate-400 rounded-full overflow-hidden'>
-      <img src="" alt="Picture" className="w-full h-full object-cover" /> {/* Mejora para mostrar la imagen correctamente */}
+      <div className="w-20 h-20 bg-slate-400 rounded-full overflow-hidden">
+        <img src="" alt="Picture" className="w-full h-full object-cover" />{" "}
+        {/* Mejora para mostrar la imagen correctamente */}
+      </div>
+      <div className="space-y-1">
+        <h4 className="font-semibold">{name}</h4>{" "}
+        {/* Añadir estilos para el título */}
+        <p>{email}</p> {/* Cambiar h4 por p para los valores */}
+        <p>{phone}</p>
+      </div>
+      <div className="space-y-1">
+        <p>
+          <span className="font-semibold">Cargo:</span> {cargo}
+        </p>
+        <p>
+          <span className="font-semibold">Fecha de nacimiento:</span>{" "}
+          {fnacimiento}
+        </p>
+        <p>
+          <span className="font-semibold">Estado:</span> {status}
+        </p>
+      </div>
     </div>
-    <div className="space-y-1">
-      <h4 className="font-semibold">{name}</h4> {/* Añadir estilos para el título */}
-      <p>{email}</p> {/* Cambiar h4 por p para los valores */}
-      <p>{phone}</p>
-    </div>
-    <div className="space-y-1">
-      <p><span className="font-semibold">Cargo:</span> {cargo}</p>
-      <p><span className="font-semibold">Fecha de nacimiento:</span> {fnacimiento}</p>
-      <p><span className="font-semibold">Estado:</span> {status}</p>
-    </div>
-  </div>
   );
 }
 
 function MyTableEmpresa() {
- 
- 
-  const data = [
-    { name:"Proyecto",
-      activo: true,
-      soloVer: false,
-      administrar: true,
-      todo: true,
-      propietario: true,
-    }
-    // {
-    //   name:"Clientes",
-    //   activo: false,
-    //   soloVer: true,
-    //   administrar: false,
-    //   todo: false,
-    //   propietario: false,
-    // }
-  ];
+  const data = dataPermiso.permisos;
   return (
-    <div className="flex flex-row bg-slate-50   w-full	 ">
-       <table  className='w-full  text-left '>
-      <thead  className='bg-blue-500 text-white'>
-        
-        <tr>
-          <th className='p-2'>Comercial</th>
-           <th ></th>
-          <th> </th>
-          <th ></th>
-          <th></th>
-          <th ></th> 
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((fila, index) => (
-          <tr key={index} className='border-b'>
-            <td className='p-2'>{fila.name}</td>
-            
-            <td className='p-2'>
-            <input
-                type="radio"
-                checked={fila.activo}
-              />              </td>
-            <td className='p-2' >
-            <input
-                type="radio"
-                checked={fila.soloVer}
-              />
+    <div className=" bg-slate-50   w-full	 ">
+      {data.map((e, index) => (
+        <table key={index} className="w-full">
+          <thead className="bg-blue-500 text-white">
+            <tr>
+              <th colSpan={7} className="p-2 text-left">
+                {e.categoria}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr key={index} className="border-b">
+              <td  colSpan={3}className=" py-2 px-4 text-left border w-40">
+                <h3>{e.subcategoria}</h3>
               </td>
-            <td  className='p-2'>
-            <input
-                type="radio"
-                checked={fila.administrar}
-              />
+              <td colSpan={0} className="py-2 px-4 text-center  text-sm border">
+                <input type="radio" checked={e.inactivo ? true : false} />{" "}
               </td>
-            <td className='p-2'>
-            <input
-                type="radio"
-                checked={fila.todo}
-              />
+
+              <td colSpan={0} className="py-2 px-4 text-center  text-sm border">
+                <input type="radio" checked={e.ver ? true : false} />{" "}
               </td>
-            <td className='p-2'>
-               <input
-                type="radio"
-                checked={fila.propietario}
-              />
+              <td colSpan={0} className="py-2 px-4 text-center  text-sm border">
+                <input type="radio" checked={e.administrar ? true : false} />{" "}
               </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+              <td colSpan={0} className="py-2 px-4 text-center  text-sm border">
+                <input type="radio" checked={e.todo ? true : false} />{" "}
+              </td>
+              <td
+                colSpan={0}
+                className="py-2 px-4 text-center   text-sm border"
+              >
+                <input type="radio" checked={e.propietario ? true : false} />{" "}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      ))}
     </div>
   );
 }
 
 const Myperfil: React.FC = () => {
-
-  
   // Assuming you have data for your employees:
   const employeeData: DatosProps = {
-    name: 'Juan Aguilera',
-    email: 'app@wecom.global',
-    phone: '+1234567890',
-    cargo: 'Software Engineer',
-    fnacimiento: '1990-01-01', // Adjust format if necessary
-    status: 'Active',
+    name: "Juan Aguilera",
+    email: "app@wecom.global",
+    phone: "+1234567890",
+    cargo: "Software Engineer",
+    fnacimiento: "1990-01-01", // Adjust format if necessary
+    status: "Active",
   };
 
   return (
-    <div className="w-140 mx-auto mt-10">
-      <MyDatos {...employeeData} /> {/* Spread operator for concise data passing */}
-      <table  className='w-full   mt-9'>
-      <thead  className='border border-solid border-current	 rounded-3xl  '>
-         <tr className='w-10 border-solid border-2'>
-          <th className='w-10 border-solid border-2'></th>
-          <th className='w-10 border-solid border-2'>Inactivo</th>
-          <th className='w-10 border-solid border-2'>Solo Ver</th>
-          <th className='w-10 border-solid border-2' >Administrar</th>
-          <th className='w-10 border-solid border-2'>Todo</th>
-          <th className='w-10 border-solid border-2'>Propietario</th>
-        </tr> 
-         </thead>
+    <div className="w-full mx-auto    overflow-y-auto">
+      <div className=" w-3/4 mx-auto">
+        <MyDatos {...employeeData} />{" "}
+        {/* Spread operator for concise data passing */}
+        <table className="w-full mt-9  table-auto 	">
+          <thead>
+            <tr className="bg-blue-500 text-white">
+              <th colSpan={3} className="py-2 px-4 text-left">
+                Módulo
+              </th>
+              <th colSpan={3} className="py-2 px-4 text-center">
+                Permiso
+              </th>
+              <th colSpan={3} className="py-2 px-4 text-center">
+                Visualización
+              </th>
+            </tr>
+            <tr className="bg-white  ">
+              <th colSpan={3} className="py-2 px-4 text-left border w-40"></th>
+              <th colSpan={0} className="py-2 px-4 text-left text-sm	 border	">
+                Inactivo
+              </th>
+              <th colSpan={0} className="py-2 px-4 text-left  text-sm border">
+                Solo Ver
+              </th>
+              <th colSpan={0} className="py-2 px-4 text-left  text-sm border">
+                Administrar
+              </th>
+              <th colSpan={0} className="py-2 px-4 text-left  text-sm border">
+                Todo
+              </th>
+              <th colSpan={0} className="py-2 px-4 text-left  text-sm border">
+                Propietario
+              </th>
+            </tr>
+          </thead>
+          {/* Si tienes filas de datos, deberían ir dentro de un <tbody> aquí */}
         </table>
-     <MyTableEmpresa/>
+        <MyTableEmpresa />
+      </div>
     </div>
   );
 };
