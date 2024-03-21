@@ -15,6 +15,8 @@ import MiEmpresa from "./pages/MiEmpresa";
 import TableAdministration from "./components/Elements/Tables/TableAdministration";
 import AddNewProyect from "./pages/nested/routeschild/AddNewProyect";
 import Administration from "./pages/Administration";
+import TerminosyCondiciones from "./pages/TerminosyCondiciones";
+import CreaContrasena from "./pages/CreaContrasena";
 
 let router = createBrowserRouter([
   {
@@ -80,6 +82,24 @@ let router = createBrowserRouter([
     path: "/TableAdministration",
     element: <TableAdministration />,
   },
+  
+  {
+    path: "/onboarding",
+    element: "",
+    children: [
+      {
+        path: "terminos-y-condiciones",
+        element: <TerminosyCondiciones />,
+      },
+      {
+        path: "crea-contrasena",
+        element: <CreaContrasena />,
+      },
+    ],
+  },
+
+
+
 ]);
 
 export default function App() {
