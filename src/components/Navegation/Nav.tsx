@@ -132,7 +132,7 @@ const Nav: React.FC = () => {
         >
           <Reference title={reference.name} icons={reference.rel} />
           {reference.subcategories && (
-            <span className="toggle-icon">
+            <span className="toggle-icon p-2">
               {expandedCategory === reference.path ? (
                 <FaAngleUp />
               ) : (
