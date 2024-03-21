@@ -12,9 +12,13 @@ import Operations from "./pages/Operations";
 import Calendar from "./pages/Calendar";
 import Componentes from "./pages/Componentes";
 import MiEmpresa from "./pages/MiEmpresa";
-import TableAdministration from "./components/Elements/Tables/TableAdministration";
 import AddNewProyect from "./pages/nested/routeschild/AddNewProyect";
 import Administration from "./pages/Administration";
+import Ventas from "./pages/nested/Administration/Ventas";
+import Compras from "./pages/nested/Administration/Compras";
+import Pagos from "./pages/nested/Administration/Pagos";
+import Cobros from "./pages/nested/Administration/Cobros";
+import Cuentas from "./pages/nested/Administration/Cuentas";
 
 let router = createBrowserRouter([
   {
@@ -34,6 +38,39 @@ let router = createBrowserRouter([
   {
     path: "/administration",
     element: <Administration />,
+    children: [
+      /* {
+        path: "cliente",
+        element: <Cliente />,
+        children: [
+          // Agrega una nueva propiedad 'children' para las rutas hijas de Cliente
+          {
+            path: "nuevocliente",
+            element: <Newcliente />,
+          },
+        ],
+      }, */
+      {
+        path: "Ventas",
+        element: <Ventas />,
+      },
+      {
+        path: "Compras",
+        element: <Compras />,
+      },
+      {
+        path: "Pagos",
+        element: <Pagos />,
+      },
+      {
+        path: "Cobros",
+        element: <Cobros />,
+      },
+      {
+        path: "Cuentas",
+        element: <Cuentas />,
+      },
+    ],
   },
   {
     path: "/calendar",
@@ -75,10 +112,6 @@ let router = createBrowserRouter([
   {
     path: "/componentes",
     element: <Componentes />,
-  },
-  {
-    path: "/TableAdministration",
-    element: <TableAdministration />,
   },
 ]);
 
