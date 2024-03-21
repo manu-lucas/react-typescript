@@ -107,12 +107,6 @@ let router = createBrowserRouter([
     path: "/componentes",
     element: <Componentes />,
   },
-
-  {
-    path: "/TableAdministration",
-    element: <TableAdministration />,
-  },
-  
   {
     path: "/onboarding",
     element: "",
