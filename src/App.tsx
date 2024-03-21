@@ -14,11 +14,6 @@ import Componentes from "./pages/Componentes";
 import MiEmpresa from "./pages/MiEmpresa";
 import AddNewProyect from "./pages/nested/routeschild/AddNewProyect";
 import Administration from "./pages/Administration";
-import Ventas from "./pages/nested/Administration/Ventas";
-import Compras from "./pages/nested/Administration/Compras";
-import Pagos from "./pages/nested/Administration/Pagos";
-import Cobros from "./pages/nested/Administration/Cobros";
-import Cuentas from "./pages/nested/Administration/Cuentas";
 
 let router = createBrowserRouter([
   {
@@ -79,6 +74,28 @@ let router = createBrowserRouter([
   {
     path: "/miempresa",
     element: <MiEmpresa />,
+    children: [
+      {
+        path: "usuarios",
+        element: <Usuarios />,
+      },
+      {
+        path: "productos",
+        element: <Products />,
+      },
+      {
+        path: "listaprecios",
+        element: <ListaPrecios />,
+      },
+      {
+        path: "proveedores",
+        element: <Proveedors />,
+      },
+      {
+        path: "configuracion",
+        element: <Configuracion />,
+      },
+    ],
   },
   {
     path: "/comercial",
@@ -112,6 +129,10 @@ let router = createBrowserRouter([
   {
     path: "/componentes",
     element: <Componentes />,
+  },
+  {
+    path: "/TableAdministration",
+    element: <TableAdministration />,
   },
 ]);
 
