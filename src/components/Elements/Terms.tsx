@@ -9,15 +9,15 @@ const TermsOfService: React.FC = () => {
 
     return (
         <div className="h-screen w-85 overflow-y-auto	 ">
-            <div className=" w-4/5 mx-auto mb-2 mt-6 rounded-3xl p-6 bg-white shadow-7xl">
+            <div className=" w-4/5 mx-auto mb-2 mt-6 rounded-3xl p-6 bg-white shadow-7xl h-4/5">
 
                 <div className="w-full m-auto w-3/6 mt-5">
                     <h2>Términos y Condiciones del Servicio - Appify</h2>
                 </div>
                 <div className="flex flex-row w-full justify-between">
 
-                    <div className="w-full flex flex-row mt-10">
-                    <scrollable-component>
+                    <div className="w-full flex flex-row mt-10 mb-10  h-96 overflow-y-auto">
+                    
                         Appify - Términos del Servicio
 
                         Fecha de vigencia:  06/05/2024
@@ -125,27 +125,12 @@ const TermsOfService: React.FC = () => {
                         Estos Términos, junto con cualquier regla, directriz o política publicada en la página de inicio de Appify, constituyen el acuerdo completo entre Appify y usted con respecto a su uso de nuestros Servicios. Si existe algún conflicto entre los Términos y cualquier otra regla o instrucción publicada en los Servicios, prevalecerán los Términos. Ninguna modificación de estas Condiciones por su parte será efectiva a menos que Appify lo reconozca por escrito. Sin perjuicio de lo anterior, Appify se reserva el derecho, a su exclusivo criterio, de modificar estos Términos o las políticas a las que se hace referencia en este documento en cualquier momento, tal como se establece anteriormente. Estos Términos se regirán e interpretarán de acuerdo con las leyes del estado de Georgia, sin referencia a sus reglas de elección de leyes. Sujeto a las disposiciones de arbitraje anteriores, El lugar exclusivo para cualquier acción que surja de o en conexión con este acuerdo será en Atlanta, Georgia. Cada una de las partes por el presente acepta la jurisdicción y el lugar en Atlanta, Georgia y renuncia a cualquier objeción a dicha jurisdicción y lugar. Sin perjuicio de lo anterior, usted acepta que Appify tendrá derecho a solicitar medidas cautelares u otras medidas equitativas en cualquier jurisdicción. Sujeto a cualquier ley aplicable que establezca lo contrario, usted acepta que cualquier causa de acción que surja de o esté relacionada con el uso de nuestros Servicios debe comenzar dentro de un (1) año después de que se acumule la causa de acción, o dicha acción será prohibida permanentemente. . Si se determina que alguna parte de estos Términos no se puede hacer cumplir o no es válida por algún motivo, esa disposición se limitará o eliminará en la medida mínima necesaria para que el resto de estos Términos permanezcan en pleno vigor y efecto. No puede ceder sus derechos u obligaciones en virtud de estos Términos sin el consentimiento previo por escrito de Appify. El hecho de que Appify no insista o no haga cumplir alguna disposición de estos Términos no se interpretará como una renuncia a ninguna disposición o derecho. Cualquier sección o término que, por su naturaleza, deba sobrevivir o sea necesario para hacer cumplir el propósito de estos Términos, sobrevivirá a la terminación de estos Términos y la terminación de los Servicios. Todos los encabezados incluidos en estos Términos se incluyen solo por conveniencia y no se considerarán al interpretar estos Términos. Estos Términos no limitan ningún derecho que Appify pueda tener de conformidad con las leyes de propiedad intelectual o cualquier otra ley. Todos los derechos y recursos disponibles para Appify, de conformidad con este Acuerdo o de otro modo, por ley o en equidad, son acumulativos y no excluyentes de cualquier otro derecho o recurso que pueda estar disponible para Appify. En ningún caso buscará ni tendrá derecho a la rescisión, medida cautelar u otro desagravio equitativo, ni a prohibir o restringir la operación de los Servicios, o cualquier otro material emitido en relación con el mismo, o la explotación de los Servicios o cualquier contenido u otro material utilizado. o se muestra a través de los Servicios. Salvo que se establezca expresamente lo contrario en este documento, no existirá ningún derecho de ninguna persona, que no sea usted y Appify, para reclamar un interés beneficioso en estos Términos o cualquier derecho que surja en virtud de estos Términos. Ninguna relación de contratista independiente, sociedad, empresa conjunta,
                         Si tiene alguna pregunta, queja o reclamo, puede comunicarse con Appify en XXXXX, XXXXX, XXXXXX o al correo electrónico ventas@appify.cl
 
-                        </scrollable-component>
+                        
 
                     </div>
                 </div>
 
-                <div className="w-full flex justify-end">
-
-                </div>
-                <div className="flex flex-row justify-between mt-5">
-                    <p></p>
-                    <div className="flex flex-row">
-                        <div className="w-52">
-
-                        </div>
-
-                    </div>
-                </div>
-                <div></div>
-                <div className="w-auto h-auto m-5 flex flex-row ">
-
-                </div>
+                
                 <div className="p-5 w-3/6 shadow-7xl rounded-lg ml-auto mr-auto ">
                     <SwitchComponent />
                     He leído y acepto los términos del Servicio de Appify
