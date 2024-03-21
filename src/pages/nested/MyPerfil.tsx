@@ -105,7 +105,7 @@ const Myperfil: React.FC = () => {
   };
 
   return (
-    <div className="w-full mx-auto    overflow-y-auto">
+    <div className="w-85 mx-auto    overflow-y-auto">
       <div className=" w-3/4 mx-auto">
         <MyDatos {...employeeData} />{" "}
         <Accordion className="m-4 font-bold">
