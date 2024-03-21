@@ -14,11 +14,15 @@ import Componentes from "./pages/Componentes";
 import MiEmpresa from "./pages/MiEmpresa";
 import AddNewProyect from "./pages/nested/routeschild/AddNewProyect";
 import Administration from "./pages/Administration";
+
 import Usuarios from "./pages/nested/empresachild/Usuarios";
 import Products from "./pages/nested/empresachild/Products";
 import ListaPrecios from "./pages/nested/empresachild/ListaPrecios";
 import Proveedors from "./pages/nested/empresachild/Proveedors";
 import Configuracion from "./pages/nested/empresachild/Configuracion";
+import TerminosyCondiciones from "./pages/TerminosyCondiciones";
+import CreaContrasena from "./pages/CreaContrasena";
+
 
 let router = createBrowserRouter([
   {
@@ -103,7 +107,27 @@ let router = createBrowserRouter([
     path: "/componentes",
     element: <Componentes />,
   },
- 
+
+  {
+    path: "/TableAdministration",
+    element: <TableAdministration />,
+  },
+  
+  {
+    path: "/onboarding",
+    element: "",
+    children: [
+      {
+        path: "terminos-y-condiciones",
+        element: <TerminosyCondiciones />,
+      },
+      {
+        path: "crea-contrasena",
+        element: <CreaContrasena />,
+      },
+    ],
+  },
+
 ]);
 
 export default function App() {
