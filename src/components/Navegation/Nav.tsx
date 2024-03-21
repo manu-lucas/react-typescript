@@ -75,19 +75,19 @@ const Nav: React.FC = () => {
         },
         {
           name: "Compras",
-          path: "/administration",
+          path: "/administration/compras",
         },
         {
           name: "Pagos",
-          path: "/administration",
+          path: "/administration/pagos",
         },
         {
           name: "Cobros",
-          path: "/administration",
+          path: "/administration/cobros",
         },
         {
           name: "Cuentas",
-          path: "/administration",
+          path: "/administration/cuentas",
         },
       ],
     },
@@ -157,7 +157,9 @@ const Nav: React.FC = () => {
 
   return (
     <div className=" h-screen w-15 rounded-br-[200px] bg-gradient-to-b from-verdeFondo from-50% to-verdePie to-90% left-0">
-    <div><img src="..\src\assets\logo_appify.jpeg"/></div>
+      <div>
+        <img src="..\src\assets\logo_appify.jpeg" />
+      </div>
 
       <nav>
         <ul>{renderNavItems(referencesData)}</ul>

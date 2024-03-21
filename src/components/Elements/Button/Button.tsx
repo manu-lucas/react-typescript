@@ -15,7 +15,7 @@ const Button: React.FC<Props> = ({ name, changeState }) => {
 
   return (
     <div
-      className={`border rounded-2xl inline-block px-2 py-1 text-white cursor-pointer transition-colors ${
+      className={`border h-10 rounded-2xl inline-block px-2 py-1 text-white cursor-pointer transition-colors ${
         isActive ? "bg-blue-500 shadow-md" : "bg-slate-500"
       }`}
       onClick={handleClick}
