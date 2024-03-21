@@ -5,14 +5,14 @@ import Login from '../components/Login/Login'
 
 
 const LandingPage: React.FC = () => {
- return (
-     <div  className='h-screen w-85 bg-green-200	' >
-     <Login />
-     
-   {/* {<DateSelect/>} */}
-   </div>
-   
-   
+  return (
+    <div className='h-screen w-full bg-verdeFondo	' >
+      <Login />
+
+      {/* {<DateSelect/>} */}
+    </div>
+
+
   );
 };
 
