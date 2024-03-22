@@ -1,9 +1,8 @@
 import React from 'react';
 import { useStore } from '../../../store/useStore';
 
-
 const Products: React.FC = () => {
-  const [bears,,] =useStore((state)=>[
+  const [bears] =useStore((state)=>[
 
     state.bears,
   ])

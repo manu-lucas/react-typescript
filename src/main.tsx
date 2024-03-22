@@ -4,14 +4,10 @@ import "./index.css";
 import App from "./App";
 import { NextUIProvider } from "@nextui-org/react";
 import { DateProvider } from './components/Contexts/DateContext';
-import { QueryClient, QueryClientProvider } from 'react-query';
-
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 
 const queryClient = new QueryClient();
-
- 
-
 
 
 
