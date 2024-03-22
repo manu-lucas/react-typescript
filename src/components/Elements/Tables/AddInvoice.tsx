@@ -133,6 +133,7 @@ const AddInvoice: React.FC = () => {
               className="p-2 border rounded w-full"
             >
               <option value="">Voucher</option>
+              <option value="">Factura</option>
               <option value="Factura exenta">Factura exenta</option>
               <option value="Nota de credito">Nota de credito</option>
               <option value="Nota de debito">Nota de debito</option>
