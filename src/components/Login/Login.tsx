@@ -44,7 +44,7 @@ const Login: React.FC = () => {
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="logo">
-        <img src="/src/assets/logo.svg" alt="Logo" />
+        <img src="/src/assets/logo_appify.jpeg" alt="Logo" />
       </div>
       <div className="bg-white rounded p-8 shadow-md w-80">
         <Formik

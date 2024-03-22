@@ -14,15 +14,18 @@ import Componentes from "./pages/Componentes";
 import MiEmpresa from "./pages/MiEmpresa";
 import AddNewProyect from "./pages/nested/routeschild/AddNewProyect";
 import Administration from "./pages/Administration";
-
+import Ventas from "./pages/nested/Administration/Ventas";
+import Compras from "./pages/nested/Administration/Compras";
+import Pagos from "./pages/nested/Administration/Pagos";
+import Cobros from "./pages/nested/Administration/Cobros";
+import Cuentas from "./pages/nested/Administration/Cuentas";
+import TerminosyCondiciones from "./pages/TerminosyCondiciones";
+import CreaContrasena from "./pages/CreaContrasena";
 import Usuarios from "./pages/nested/empresachild/Usuarios";
 import Products from "./pages/nested/empresachild/Products";
 import ListaPrecios from "./pages/nested/empresachild/ListaPrecios";
 import Proveedors from "./pages/nested/empresachild/Proveedors";
 import Configuracion from "./pages/nested/empresachild/Configuracion";
-import TerminosyCondiciones from "./pages/TerminosyCondiciones";
-import CreaContrasena from "./pages/CreaContrasena";
-
 
 let router = createBrowserRouter([
   {
@@ -42,6 +45,39 @@ let router = createBrowserRouter([
   {
     path: "/administration",
     element: <Administration />,
+    children: [
+      /* {
+        path: "cliente",
+        element: <Cliente />,
+        children: [
+          // Agrega una nueva propiedad 'children' para las rutas hijas de Cliente
+          {
+            path: "nuevocliente",
+            element: <Newcliente />,
+          },
+        ],
+      }, */
+      {
+        path: "Ventas",
+        element: <Ventas />,
+      },
+      {
+        path: "Compras",
+        element: <Compras />,
+      },
+      {
+        path: "Pagos",
+        element: <Pagos />,
+      },
+      {
+        path: "Cobros",
+        element: <Cobros />,
+      },
+      {
+        path: "Cuentas",
+        element: <Cuentas />,
+      },
+    ],
   },
   {
     path: "/calendar",
@@ -54,26 +90,26 @@ let router = createBrowserRouter([
       {
         path: "usuarios",
         element: <Usuarios/>,
-  },
-  {
-    path: "productos",
-    element: <Products/>,
-},
-{
-  path: "listaprecios",
-  element: <ListaPrecios/>,
-},
-{
-  path: "proveedores",
-  element: <Proveedors />,
-},
-{
-  path: "configuracion",
-  element: <Configuracion/>,
-}
 
-] }
-  ,
+      },
+      {
+        path: "productos",
+        element: <Products/>,
+      },
+      {
+        path: "listaprecios",
+        element: <ListaPrecios/>,
+      },
+      {
+        path: "proveedores",
+        element: <Proveedors/>,
+      },
+      {
+        path: "configuracion",
+        element: <Configuracion/>,
+      },
+    ],
+  },
   {
     path: "/comercial",
     element: <Commercial />,
@@ -108,8 +144,6 @@ let router = createBrowserRouter([
     element: <Componentes />,
   },
 
-  
-  
   {
     path: "/onboarding",
     element: "",
