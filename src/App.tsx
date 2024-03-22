@@ -143,6 +143,7 @@ let router = createBrowserRouter([
     path: "/componentes",
     element: <Componentes />,
   },
+
   {
     path: "/onboarding",
     element: "",
