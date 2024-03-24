@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Search from "../../../components/Elements/Herramientas/Search";
+import TableAdministration from "../../../components/Elements/Tables/TableAdministration";
 
 import DateSelect from "../../../components/Elements/Herramientas/DateSelect";
 
@@ -29,6 +30,8 @@ const Ventas: React.FC = () => {
         <Search onSearchChange={handleSearchChange} />
 
       </div>
+      <TableAdministration searchValue={searchValue} />
+
       <div>
 
       </div>

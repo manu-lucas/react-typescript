@@ -14,6 +14,11 @@
   },
   "dependencies": {
     "@date-io/date-fns": "^3.0.0",
+    "@fullcalendar/common": "^5.11.5",
+    "@fullcalendar/core": "^6.1.11",
+    "@fullcalendar/daygrid": "^6.1.11",
+    "@fullcalendar/interaction": "^6.1.11",
+    "@fullcalendar/react": "^6.1.11",
     "@hookform/resolvers": "^3.3.4",
     "@nextui-org/button": "^2.0.27",
     "@nextui-org/react": "^2.2.10",
