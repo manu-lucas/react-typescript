@@ -22,3 +22,8 @@ export const getOperaciones = async()=>{
     const res = await peticionServidor.get('/posts')
     return res.data
 }
+
+export const getBank = async()=>{
+    const res = await peticionServidor.get('/banks')
+    return res.data
+}

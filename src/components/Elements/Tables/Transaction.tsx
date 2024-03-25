@@ -1,25 +1,24 @@
 import React from "react";
-import { useQuery } from "react-query";
 import { Field, Form, Formik } from "formik";
-import axios from "axios";
 
-const Transaction: React.FC = () => {
-  const {
-    data: banks,
-    isLoading,
-    isError,
-  } = useQuery("banks", async () => {
-    const response = await axios.get("http://localhost:3030/banks");
-    return response.data;
-  });
+interface Sale {
+  cliente: string;
+  fecha: number;
+  id: string;
+  invoice: string;
+  monto: number;
+  vendedor: string;
+}
 
+interface PropsTransaction {
+  data: Sale[]; // Utiliza el tipo de array de Sale aquí
+}
+
+const Transaction: React.FC<PropsTransaction> = ({ data }) => {
   const handleSubmit = (values: any) => {
     // Handle form submission
     console.log(values);
   };
-
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error fetching data</div>;
 
   return (
     <div className="max-w-md mx-auto mt-8">
@@ -45,7 +44,7 @@ const Transaction: React.FC = () => {
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             >
               <option value="">Select a Bank</option>
-              {banks.map((bank: any) => (
+              {data.map((bank: any) => (
                 <option key={bank.account} value={bank.name}>
                   {bank.name}
                 </option>
@@ -65,7 +64,7 @@ const Transaction: React.FC = () => {
               className="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             >
               <option value="">Select an Account</option>
-              {banks.map((bank: any) => (
+              {data.map((bank: any) => (
                 <option key={bank.account} value={bank.account}>
                   {bank.account}
                 </option>

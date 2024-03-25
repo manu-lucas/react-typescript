@@ -21,9 +21,9 @@ const Calendar: React.FC = () => {
   // Si necesitas manejar el clic en fecha, asegúrate de tener un manejador aquí
 
   return (
-    <div className='h-screen w-full bg-white flex flex-row'>
+    <div className='h-96 w-full bg-white flex flex-row'>
       <Nav />
-      <div className='w-4/5 h-auto mx-auto'>
+      <div className='w-4/5 h-96 mx-auto'>
         <FullCalendar
           plugins={[dayGridPlugin /*, interactionPlugin*/]} // Añade interactionPlugin si lo necesitas
           eventContent={renderEventContent} // Usa tu función personalizada para renderizar contenido de eventos

@@ -6,7 +6,6 @@ import Ventas from "./nested/Administration/Ventas";
 const Administration: React.FC = () => {
   const location = useLocation(); // Usa el hook useLocation para acceder al objeto location
 
-  console.log(location.pathname);
   return (
     <div className="h-screen w-full bg-green-200 flex flex-row">
       <Nav />
