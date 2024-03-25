@@ -22,3 +22,12 @@ const getBank = async () => {
 export function getResBank() {
   return useQuery({ queryKey: ["getbank"], queryFn: getBank });
 }
+
+const getUser = async () => {
+  const res = await peticionServidor.get("/usuarios");
+  return res.data;
+};
+
+export function getResUsuarios() {
+  return useQuery({ queryKey: ["usuarios"], queryFn: getUser });
+}

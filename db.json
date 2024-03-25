@@ -338,5 +338,31 @@
       "name": "Bank Yas",
       "account": "9876543290"
     }
+  ],
+  "usuarios": [
+    {
+      "name": "Agus Gomez",
+      "cargo" : null,
+      "email": "agomez@wecom.global",
+      "status": 1
+    },
+    {
+      "name": "Erwin Rohrstock",
+      "cargo" : null,
+      "email": "e.rohrstock@mundoparcelas.cl",
+      "status": 1
+    },
+    {
+      "name": "Lucas Kuliz",
+      "cargo" : null,
+      "email": "lucaskuliz@gmail.com",
+      "status": 0
+    },
+    {
+      "name": "Tamara Cadevilla",
+      "cargo" : null,
+      "email": "tamara@gmail.com",
+      "status": 0
+    }
   ]
 }

@@ -3,7 +3,7 @@ import { Input } from "@nextui-org/react";
 import { IoIosSearch } from "react-icons/io";
 
 interface SearchProps {
-  onSearchChange: (value: string) => void;
+  onSearchChange?: (value: string) => void;
 }
 
 const Search: React.FC<SearchProps> = ({ onSearchChange }) => {
@@ -11,11 +11,13 @@ const Search: React.FC<SearchProps> = ({ onSearchChange }) => {
 
   const handleChange = (newValue: string) => {
     setValue(newValue);
-    onSearchChange(newValue);
+    if (onSearchChange) {
+      onSearchChange(newValue);
+    }
   };
 
   return (
-    <div className="w-full flex flex-col gap-2 max-w-[240px] relative">
+    <div className="w-full flex flex-col gap-2 max-w-[240px] relative bg-white  rounded-3xl">
       <Input
         variant="bordered"
         placeholder="Buscar"

@@ -12,7 +12,6 @@ const Administration: React.FC = () => {
       {location.pathname === "/administration" && <Ventas />}
 
       <div className="flex-grow">
-        {" "}
         {/* This div will take up the remaining space */}
         <Outlet />
       </div>
