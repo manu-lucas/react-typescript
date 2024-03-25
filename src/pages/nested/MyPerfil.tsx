@@ -1,8 +1,9 @@
 import React from "react";
 import { dataPermiso } from "../../components/Elements/Herramientas/data";
 import { Accordion, AccordionItem } from "@nextui-org/react";
+import CategoriaTable from "../../components/Elements/Tables/TableMyEmpresa";
 
-console.log(dataPermiso.permisos);
+
 interface DatosProps {
   name: string;
   email: string;
@@ -11,6 +12,20 @@ interface DatosProps {
   fnacimiento: string; // Assuming format is suitable for display
   status: string;
 }
+interface CategoriaAgrupada {
+  [key: string]: {
+    categoria: string;
+    subcategoria: string;
+    id: number;
+    inactivo: number;
+    ver: number;
+    administrar?: number | null;
+    todo?: number | null;
+    propietario?: number | null;
+  }[];
+}
+
+
 
 function MyDatos({
   name,
@@ -48,46 +63,23 @@ function MyDatos({
   );
 }
 
+
+
 function MyTableEmpresa() {
   const data = dataPermiso.permisos;
-  return (
-    <div className=" bg-slate-50   w-full	 ">
-      {data.map((e, index) => (
-        <table key={index} className="w-full">
-          <thead className="bg-blue-500 text-white">
-            <tr>
-              <th colSpan={7} className="p-2 text-left">
-                {e.categoria}
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr key={index} className="border-b">
-              <td colSpan={3} className=" py-2 px-4 text-left border w-40">
-                <h3>{e.subcategoria}</h3>
-              </td>
-              <td colSpan={0} className="py-2 px-4 text-center  text-sm border">
-                <input type="radio" checked={e.inactivo ? true : false} />{" "}
-              </td>
 
-              <td colSpan={0} className="py-2 px-4 text-center  text-sm border">
-                <input type="radio" checked={e.ver ? true : false} />{" "}
-              </td>
-              <td colSpan={0} className="py-2 px-4 text-center  text-sm border">
-                <input type="radio" checked={e.administrar ? true : false} />{" "}
-              </td>
-              <td colSpan={0} className="py-2 px-4 text-center  text-sm border">
-                <input type="radio" checked={e.todo ? true : false} />{" "}
-              </td>
-              <td
-                colSpan={0}
-                className="py-2 px-4 text-center   text-sm border"
-              >
-                <input type="radio" checked={e.propietario ? true : false} />{" "}
-              </td>
-            </tr>
-          </tbody>
-        </table>
+  const categoriasAgrupadas: CategoriaAgrupada = data.reduce((acc, obj) => {
+    if (!acc[obj.categoria]) {
+      acc[obj.categoria] = [];
+    }
+    acc[obj.categoria].push(obj);
+    return acc;
+  }, {} as CategoriaAgrupada);
+
+  return (
+    <div className="bg-slate-50 w-full">
+      {Object.entries(categoriasAgrupadas).map(([categoria, datos]) => (
+        <CategoriaTable key={categoria} categoria={categoria} datos={datos} />
       ))}
     </div>
   );
@@ -177,13 +169,10 @@ const Myperfil: React.FC = () => {
             aria-label="Accordion 1"
             title={"Restricción de descuentos"}
           >
-          <h4>Máximo dscto productos s/inventario</h4>
-          <h2>100%</h2>
-
-
+            <h4>Máximo dscto productos s/inventario</h4>
+            <h2>100%</h2>
           </AccordionItem>
         </Accordion>
-
         <Accordion className="m-4 font-bold">
           <AccordionItem
             className=" font-bold  bg-white rounded-3xl px-6"
@@ -191,10 +180,8 @@ const Myperfil: React.FC = () => {
             aria-label="Accordion 1"
             title={"Horario Usuario"}
           >
-          <h4></h4>
-          <h2>100%</h2>
-
-
+            <h4></h4>
+            <h2>100%</h2>
           </AccordionItem>
         </Accordion>
       </div>
