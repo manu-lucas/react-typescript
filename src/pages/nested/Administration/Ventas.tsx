@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Search from "../../../components/Elements/Herramientas/Search";
 import DateSelect from "../../../components/Elements/Herramientas/DateSelect";
-import { getOperaciones } from "../../../api/Request";
-import { useQuery } from "@tanstack/react-query";
+import { useGetOperaciones } from "../../../api/Request";
 import TableAdministration from "../../../components/Elements/Tables/TableAdministration";
 
 interface DateState {
@@ -18,10 +17,8 @@ const Ventas: React.FC = () => {
 
   const [searchValue, setSearchValue] = useState("");
 
-  const { isLoading, data, isError, error } = useQuery({
-    queryKey: ["post"],
-    queryFn: getOperaciones,
-  });
+  const {data,isError,isLoading,error}=useGetOperaciones()
+ 
 
   if (isLoading) return <div>Loading...</div>;
   else if (isError) return <div>Error:{error.message}</div>;

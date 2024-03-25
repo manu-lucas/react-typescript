@@ -1,29 +1,24 @@
 import axios from "axios";
-
- const peticionApi = axios.create({
-    baseURL :"https://jsonplaceholder.typicode.com"
-})
+import { useQuery } from "@tanstack/react-query";
 
 const peticionServidor = axios.create({
-    baseURL :"http://localhost:3030"
+  baseURL: "http://localhost:3030",
 });
 
+const getOperaciones = async () => {
+  const res = await peticionServidor.get("/posts");
+  return res.data;
+};
 
-/* example  */
-export const getProducts = async()=>{
-    const res = await peticionApi.get('/posts')
-    return res.data
+export function useGetOperaciones() {
+  return useQuery({ queryKey: ["resPost"], queryFn: getOperaciones });
 }
 
-/*   useMutation  modificar datos del backend*/
+const getBank = async () => {
+  const res = await peticionServidor.get("/banks");
+  return res.data;
+};
 
-
-export const getOperaciones = async()=>{
-    const res = await peticionServidor.get('/posts')
-    return res.data
-}
-
-export const getBank = async()=>{
-    const res = await peticionServidor.get('/banks')
-    return res.data
+export function getResBank() {
+  return useQuery({ queryKey: ["getbank"], queryFn: getBank });
 }

@@ -5,7 +5,7 @@ import DateSelect from "../../../components/Elements/Herramientas/DateSelect";
 import Search from "../../../components/Elements/Herramientas/Search";
 import Button from "../../../components/Elements/Button/Button";
 import Transaction from "../../../components/Elements/Tables/Transaction";
-import { getOperaciones, getBank } from "../../../api/Request";
+import { useGetOperaciones, getResBank } from "../../../api/Request";
 import { useQuery } from "@tanstack/react-query";
 
 interface DateState {
@@ -22,22 +22,13 @@ const Cobros: React.FC = () => {
   const [searchValue, setSearchValue] = useState("");
   const [showTransactionModal, setShowTransactionModal] = useState(false);
 
-  const operacionesQuery = useQuery({
-    queryKey: ["operaciones"],
-    queryFn: getOperaciones,
-  });
-
-  const bankQuery = useQuery({
-    queryKey: ["bank"],
-    queryFn: getBank,
-  });
+  const { data: operacionesData, isError: operacionesIsError, isLoading: operacionesIsLoading, error: operacionesError } = useGetOperaciones();
+  const { data: bankData, isError: bankIsError, isLoading: bankIsLoading, error: bankError } = getResBank();
 
   // Gestión de los estados de carga y error para cada consulta
-  if (operacionesQuery.isLoading || bankQuery.isLoading)
-    return <div>Loading...</div>;
-  if (operacionesQuery.isError)
-    return <div>Error: {operacionesQuery.error.message}</div>;
-  if (bankQuery.isError) return <div>Error: {bankQuery.error.message}</div>;
+  if (operacionesIsLoading || bankIsLoading) return <div>Loading...</div>;
+  if (operacionesIsError) return <div>Error: {operacionesError.message}</div>;
+  if (bankIsError) return <div>Error: {bankError.message}</div>;
 
   function changeStateModal() {
     setShowTransactionModal(!showTransactionModal);
@@ -69,7 +60,7 @@ const Cobros: React.FC = () => {
         </div>
         <TableAdministration
           searchValue={searchValue}
-          data={operacionesQuery.data}
+          data={operacionesData}
           fechas={fechas}
         />
       </div>
@@ -82,7 +73,7 @@ const Cobros: React.FC = () => {
             className="bg-white p-8 rounded-lg modal-content "
             onClick={(e) => e.stopPropagation()}
           >
-            <Transaction data={bankQuery.data} />
+            <Transaction data={bankData} />
           </div>
         </div>
       )}
