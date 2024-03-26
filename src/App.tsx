@@ -14,13 +14,16 @@ import Componentes from "./pages/Componentes";
 import MiEmpresa from "./pages/MiEmpresa";
 import AddNewProyect from "./pages/nested/routeschild/AddNewProyect";
 import Administration from "./pages/Administration";
-import Ventas from "./pages/nested/Administration/Ventas";
 import Compras from "./pages/nested/Administration/Compras";
 import Pagos from "./pages/nested/Administration/Pagos";
 import Cobros from "./pages/nested/Administration/Cobros";
 import Cuentas from "./pages/nested/Administration/Cuentas";
 import TerminosyCondiciones from "./pages/TerminosyCondiciones";
 import CreaContrasena from "./pages/CreaContrasena";
+import { ThemeProvider, InvoiceProvider } from "./components/Invoice/providers";
+import { Snackbar } from "./components/Invoice/components/common";
+import AddInvoice1 from "./components/Elements/Tables/AddInvoice1";
+import { useAppSelector } from "./components/Invoice/store";
 
 let router = createBrowserRouter([
   {
@@ -54,7 +57,7 @@ let router = createBrowserRouter([
       }, */
       {
         path: "Ventas",
-        element: <Ventas />,
+        element: <AddInvoice1 />,
       },
       {
         path: "Compras",
@@ -129,11 +132,19 @@ let router = createBrowserRouter([
       },
     ],
   },
-
 ]);
 
 export default function App() {
-  return <RouterProvider router={router} />;
+  const { invoice_data } = useAppSelector((state) => state.invoice);
+
+  return (
+    <ThemeProvider>
+      <InvoiceProvider value={invoice_data}>
+        <RouterProvider router={router} />
+        <Snackbar />
+      </InvoiceProvider>
+    </ThemeProvider>
+  );
 }
 
 if (import.meta.hot) {

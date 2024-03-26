@@ -1,7 +1,6 @@
 import React from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import Table from "./Table";
-import Nav from "../../Navegation/Nav";
 import { useDateContext } from "../../Contexts/DateContext";
 
 interface Sale {
