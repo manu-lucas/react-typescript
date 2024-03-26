@@ -1,42 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css"; // Import default styles
-import "tailwindcss/tailwind.css"; // Import Tailwind CSS styles
-import { useDateContext } from "../../Contexts/DateContext";
+import "react-datepicker/dist/react-datepicker.css";
+import "tailwindcss/tailwind.css";
 
-const DateSelect: React.FC = () => {
-  const { startDate, endDate, setStartDate, setEndDate } = useDateContext();
+export interface DateState {
+  dateStart: Date;
+  dateEnd: Date;
+}
 
-  const handleDateChange = (date: Date | null, isStart: boolean) => {
-    if (isStart) {
-      setStartDate(date || new Date());
-    } else {
-      setEndDate(date || new Date());
+interface PropsDate {
+  onchange?: (dates: DateState) => void;
+}
+
+const DateSelect: React.FC<PropsDate> = ({ onchange }) => {
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+
+  // Llama a changeState solo después de que se actualice startDate o endDate
+  useEffect(() => {
+    if (onchange) {
+      onchange({
+        dateStart: startDate,
+        dateEnd: endDate,
+      });
     }
-  };
+  }, [startDate, endDate, onchange]); // Dependencias: cambio en startDate o endDate
 
   return (
     <div className="flex flex-row">
       <div className="flex items-center">
-        <label className="mr-2">From:</label>
+        <label className="mr-2">Desde:</label>
         <DatePicker
           className="border p-2 rounded-md"
           selected={startDate}
-          onChange={(date) => handleDateChange(date, true)}
-          selectsStart
-          startDate={startDate}
-          endDate={endDate}
+          onChange={(date) => date && setStartDate(date)}
         />
       </div>
       <div className="flex items-center">
-        <label className="mr-2">Until:</label>
+        <label className="mr-2">Hasta:</label>
         <DatePicker
           className="border p-2 rounded-md"
           selected={endDate}
-          onChange={(date) => handleDateChange(date, false)}
-          selectsEnd
-          startDate={startDate}
-          endDate={endDate}
+          onChange={(date) => date && setEndDate(date)}
           minDate={startDate}
         />
       </div>
