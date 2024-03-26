@@ -15,9 +15,9 @@ import {
   invoice_setInvoice,
   ISetInvoice,
 } from "../../store/invoice/invoice-actions";
-/* import { useAppDispatch } from "../../store"; */
-import { useDispatch } from "react-redux";
-
+import { useAppDispatch } from "../../store";
+/* import { useDispatch } from "react-redux";
+ */
 const EditableProvider: FC<IGeneratorContext & { children: ReactNode }> = ({
   children,
   editable,
@@ -33,7 +33,7 @@ const InvoiceGeneratorScreen: FC = () => {
    * BUG
    * I can't use react redux hooks in child components that using component from @react-pdf/renderer 😆😆😆
    */
-  const dispatch = useDispatch(); // Use the custom hook for dispatching
+  const dispatch = useAppDispatch(); // Use the custom hook for dispatching
 
   const setInvoice = (invoice: IInvoice): ISetInvoice =>
     dispatch(invoice_setInvoice(invoice));
