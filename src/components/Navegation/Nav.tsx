@@ -156,12 +156,12 @@ const Nav: React.FC = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-verdeFondo from-50% to-verdePie to-90% h-screen w-15 rounded-br-[200px]">
-      <div>
-        <img src="..\src\assets\logo_appify.jpeg" />
+    <div className="bg-verdeFondo h-screen w-15 pt-12">
+      <div className="flex justify-center">
+        <img className="w-4/5" src="..\src\assets\logo_blanco_sin_fondo.png" />
       </div>
 
-      <nav>
+      <nav className="pt-24">
         <ul>{renderNavItems(referencesData)}</ul>
       </nav>
     </div>

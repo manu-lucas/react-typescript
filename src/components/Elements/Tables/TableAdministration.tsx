@@ -80,6 +80,7 @@ const TableAdministration: React.FC<TableAdministrationProps> = ({
   ];
 
   return (
+
     <div className="h-screen w-full bg-green-200 flex flex-row">
       {/* <Nav /> */}
       <Table columns={columns} data={filteredSales} />

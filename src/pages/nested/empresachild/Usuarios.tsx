@@ -20,7 +20,7 @@ const Usuarios: React.FC = () => {
 console.log(data)
  
   return (
-    <div className="h-screen w-85 bg-green-200">
+    <div className="h-screen w-85 bg-grisFondo">
         <div> 
 
       <div className=" mx-auto flex flex-row  w-3/4  justify-between "> 
@@ -46,17 +46,9 @@ console.log(data)
       </div>
        
 
-
-
-
-
-
       </div>
 
-      
-
-
-
+    
     </div>
   );
 };

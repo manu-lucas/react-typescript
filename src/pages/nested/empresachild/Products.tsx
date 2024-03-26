@@ -7,7 +7,7 @@ const Products: React.FC = () => {
     state.bears,
   ])
  return (
-     <div  className='h-screen w-85 bg-green-200	' >
+     <div  className='h-screen w-85 bg-grisFondo	' >
      <h2>Products</h2>
      <h3>{bears}</h3>
    </div>

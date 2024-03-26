@@ -17,8 +17,8 @@ const Contrasena: React.FC = () => {
     };
 
     return (
-        <div className="h-screen w-85">
-            <div className=" w-4/5 mx-auto mb-2 mt-6 rounded-3xl p-6 bg-white shadow-7xl h-4/5">
+        <div className="h-screen w-screen">
+            <div className=" w-3/6 mx-auto mb-2 mt-6 rounded-3xl p-6 bg-white shadow-7xl h-4/5">
 
                 <div className=" m-auto w-3/6 mt-5">
                     <h2>Cambiar Contraseña</h2>
