@@ -1,10 +1,11 @@
 // tailwind.config.js
-import { nextui } from "@nextui-org/react"; // Ajusta según la disponibilidad y correcta importación
+const { nextui } = require("@nextui-org/react");
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
-    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}", // Asegúrate de que esta ruta sea correcta
+    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -14,7 +15,7 @@ module.exports = {
       spacing: {
         15: "15%",
         85: "85%",
-        140: "32rem",
+        140: "32rem", // Esto añade una clase de utilidad `w-35rem` para aplicar un ancho de 35rem
       },
       colors: {
         verdeFondo: "#2BD99A",
@@ -22,6 +23,6 @@ module.exports = {
       },
     },
   },
-  darkMode: "class", // Habilita el modo oscuro mediante la clase "dark"
-  plugins: [nextui()], // Asegúrate de que esto esté correctamente configurado según NextUI
+  darkMode: "class",
+  plugins: [nextui()],
 };

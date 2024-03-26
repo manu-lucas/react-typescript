@@ -1,37 +1,41 @@
-import React, { useState } from "react";
-import Search from "../../../components/Elements/Herramientas/Search";
-import DateSelect from "../../../components/Elements/Herramientas/DateSelect";
-import { useGetOperaciones } from "../../../api/Request";
+import React, { useState, startTransition } from "react";
+import { useNavigate, Outlet } from "react-router-dom"; // Import Link from react-router-dom
 import TableAdministration from "../../../components/Elements/Tables/TableAdministration";
-
-interface DateState {
-  dateStart: Date;
-  dateEnd: Date;
-}
+import DateSelect from "../../../components/Elements/Herramientas/DateSelect";
+import Search from "../../../components/Elements/Herramientas/Search";
+import Button from "../../../components/Elements/Button/Button";
 
 const Ventas: React.FC = () => {
-  const [fechas, setFechas] = useState<DateState>({
-    dateStart: new Date(),
-    dateEnd: new Date(),
-  });
-
   const [searchValue, setSearchValue] = useState("");
 
-  const { data, isError, isLoading, error } = useGetOperaciones();
+  const handleSearchChange = (value: string) => {
+    setSearchValue(value);
+  };
 
-  if (isLoading) return <div>Loading...</div>;
-  else if (isError) return <div>Error:{error.message}</div>;
-
+  // Function to handle navigation wrapped in startTransition
+  const handleNavigate = () => {
+    startTransition(() => {
+      navigate("/administration/ventas");
+    });
+  };
   return (
     <div className="h-screen w-full bg-green-200 flex flex-row">
       <div className="flex flex-col w-full p-10">
-        <DateSelect onchange={setFechas} />
-        <Search onSearchChange={setSearchValue} />
-        <TableAdministration
-          searchValue={searchValue}
-          data={data}
-          fechas={fechas}
-        />
+        <div className="h-screen w-full bg-green-200 flex flex-row">
+          <DateSelect />
+          <div className="h-5">
+            {/* Use the handleNavigate function on an element's click event */}
+            <button onClick={handleNavigate}>+Agregar</button>
+          </div>
+        </div>
+        <div className="h-screen w-full bg-green-200 flex flex-row p-10">
+          <Search onSearchChange={handleSearchChange} />
+
+          <Button name="EMITIDAS" />
+          <Button name="PENDIENTES" />
+          <Button name="RECURRENTES" />
+        </div>
+        <TableAdministration searchValue={searchValue} />
       </div>
     </div>
   );

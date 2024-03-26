@@ -106,7 +106,7 @@ export const dataPermiso =
             subcategoria: 'Ventas',
             id: 9,
             inactivo: 0,
-            ver: 0,
+            ver: 1,
             administrar: 0,
             todo: 1,
             propietario: 0
@@ -115,9 +115,9 @@ export const dataPermiso =
             categoria: 'Administracion',
             subcategoria: 'Compras',
             id: 10,
-            inactivo: 0,
+            inactivo: 1,
             ver: 0,
-            administrar: 1,
+            administrar: 0,
             todo: null,
             propietario: null
           },
@@ -175,8 +175,8 @@ export const dataPermiso =
             categoria: 'Otros',
             subcategoria: 'Servicios',
             id: 16,
-            inactivo: 0,
-            ver: 1,
+            inactivo: 1,
+            ver: 0,
             administrar: 0,
             todo: null,
             propietario: null
@@ -185,9 +185,9 @@ export const dataPermiso =
             categoria: 'Otros',
             subcategoria: 'Proveedores',
             id: 17,
-            inactivo: 0,
+            inactivo: 1,
             ver: 0,
-            administrar: 1,
+            administrar: 0,
             todo: null,
             propietario: null
           },
