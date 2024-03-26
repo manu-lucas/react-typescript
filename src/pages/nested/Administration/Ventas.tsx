@@ -16,7 +16,6 @@ const Ventas: React.FC = () => {
   });
 
   const [searchValue, setSearchValue] = useState("");
-  const navigate = useNavigate(); // Get the navigate function
 
   const { data, isError, isLoading, error } = useGetOperaciones();
 
@@ -34,7 +33,6 @@ const Ventas: React.FC = () => {
           fechas={fechas}
         />
       </div>
-      <Outlet />
     </div>
   );
 };
