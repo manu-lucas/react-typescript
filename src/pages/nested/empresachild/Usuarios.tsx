@@ -3,7 +3,6 @@ import React from "react";
 // import { Link } from "react-router-dom";
 import Button from "../../../components/Elements/Button/Button";
 import Search from "../../../components/Elements/Herramientas/Search";
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, getKeyValue, Spinner} from "@nextui-org/react";
 
 // import {useAsyncList} from "@react-stately/data";
 import { getResUsuarios } from "../../../api/Request";
@@ -54,33 +53,7 @@ console.log(data)
 
       </div>
 
-       <Table
-        aria-label="Tabla de usuarios"
-        classNames={{
-          table: "min-h-[400px]",
-        }}
-      >
-        <TableHeader>
-          <TableColumn key="name">Nombre</TableColumn>
-          <TableColumn key="cargo">Cargo</TableColumn>
-          <TableColumn key="email">Email</TableColumn>
-          <TableColumn key="status">Estado</TableColumn>
-        </TableHeader>
-        <TableBody
-          isLoading={isLoading}
-          loadingContent={<Spinner label="Cargando..." />}
-        >
-          {data.map((usuario, index) => (
-            <TableRow key={index}>
-              <TableCell>{usuario.name}</TableCell>
-              <TableCell>{usuario.cargo}</TableCell>
-              <TableCell>{usuario.email}</TableCell>
-              <TableCell>{usuario.status === 1 ? "Activado" : "Desactivado"}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    
+      
 
 
 
