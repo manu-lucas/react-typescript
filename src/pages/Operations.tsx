@@ -8,7 +8,7 @@ const Operations: React.FC = () => {
     <div className="h-screen w-full bg-green-200 flex flex-row">
       {/* <h2>Administration</h2> */}
       <Nav />
-      <TableAdministration searchValue={""} />
+      {/* <TableAdministration searchValue={""} /> */}
     </div>
   );
 };
