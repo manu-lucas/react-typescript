@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "../components/Navegation/Nav";
 import TableAdministration from "../components/Elements/Tables/TableAdministration";
+import TablaClientePaginado from "../components/Elements/Tables/TablaClientePaginado";
 /* import '../styles/App.scss' */
 
 const Operations: React.FC = () => {
@@ -8,7 +9,7 @@ const Operations: React.FC = () => {
     <div className="h-screen w-full bg-green-200 flex flex-row">
       {/* <h2>Administration</h2> */}
       <Nav />
-      <TableAdministration searchValue={""} />
+      <TablaClientePaginado />
     </div>
   );
 };
