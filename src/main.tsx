@@ -9,22 +9,10 @@ const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <NextUIProvider>
-<<<<<<< HEAD
-          <QueryClientProvider client={queryClient}>
-      <DateProvider>
-        <App />
-          <QueryClientProvider client={queryClient}>
-      <DateProvider>
-        <App />
-        </DateProvider>
-            </QueryClientProvider>
-            </QueryClientProvider>
-=======
-      <QueryClientProvider client={queryClient}>
-            <App />
-      </QueryClientProvider>
->>>>>>> 65a10568c15215127650cee011d629d2952db315
-    </NextUIProvider>
-  </React.StrictMode>
+  <NextUIProvider>
+        <QueryClientProvider client={queryClient}>
+      <App />
+          </QueryClientProvider>
+  </NextUIProvider>
+</React.StrictMode>
 );
