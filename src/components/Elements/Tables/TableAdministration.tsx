@@ -1,18 +1,23 @@
 import React from "react";
-import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import Table from "./Table";
 
 interface Sale {
   cliente: string;
-  invoice: string;
-  vendedor: string;
   fecha: number;
-  monto: number;
   id: string;
+  invoice: string;
+  monto: number;
+  vendedor: string;
+}
+interface DateState {
+  dateStart: Date;
+  dateEnd: Date;
 }
 
 interface TableAdministrationProps {
   searchValue: string;
+  data: Sale[]; // Utiliza el tipo de array de Sale aquí
+  fechas: DateState; // Asegúrate de que este tipo coincide con cómo lo defines y lo pasas
 }
 
 const TableAdministration: React.FC<TableAdministrationProps> = ({
@@ -22,26 +27,16 @@ const TableAdministration: React.FC<TableAdministrationProps> = ({
 }) => {
   console.log(data);
 
-  const {
-    data: sales,
-    isLoading,
-    isError,
-  } = useQuery<Sale[]>("sales", async () => {
-    const response = await fetch("http://localhost:3030/posts");
-    if (!response.ok) {
-      throw new Error("Failed to fetch posts");
-    }
-    return response.json();
-  });
+  const { dateStart, dateEnd } = fechas;
 
   // Filter sales data based on start and end dates
-  const filteredSales = sales
-    ? sales.filter((sale) => {
+  const filteredSales = data
+    ? data.filter((sale) => {
         const saleDate = new Date(sale.fecha * 1000);
         const searchTerm = searchValue.toLowerCase();
         return (
-          saleDate >= startDate &&
-          saleDate <= endDate &&
+          saleDate >= dateStart &&
+          saleDate <= dateEnd &&
           (sale.cliente.toLowerCase().includes(searchTerm) ||
             sale.invoice.toLowerCase().includes(searchTerm) ||
             sale.vendedor.toLowerCase().includes(searchTerm))
