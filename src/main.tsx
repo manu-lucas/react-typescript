@@ -21,7 +21,11 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
           <QueryClientProvider client={queryClient}>
       <DateProvider>
         <App />
+          <QueryClientProvider client={queryClient}>
+      <DateProvider>
+        <App />
         </DateProvider>
+            </QueryClientProvider>
             </QueryClientProvider>
     </NextUIProvider>
   </React.StrictMode>

@@ -1,8 +1,6 @@
 import React from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import Table from "./Table";
-import Nav from "../../Navegation/Nav";
-import { useDateContext } from "../../Contexts/DateContext";
 
 interface Sale {
   cliente: string;
@@ -19,9 +17,10 @@ interface TableAdministrationProps {
 
 const TableAdministration: React.FC<TableAdministrationProps> = ({
   searchValue,
+  fechas,
+  data,
 }) => {
-  const { startDate, endDate } = useDateContext();
-  const queryClient = new QueryClient();
+  console.log(data);
 
   const {
     data: sales,
@@ -49,14 +48,6 @@ const TableAdministration: React.FC<TableAdministrationProps> = ({
         );
       })
     : [];
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (isError) {
-    return <div>Error fetching data</div>;
-  }
 
   const columns = [
     {
@@ -94,12 +85,10 @@ const TableAdministration: React.FC<TableAdministrationProps> = ({
   ];
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <div className="h-screen w-full bg-green-200 flex flex-row">
-        {/* <Nav /> */}
-        <Table columns={columns} data={filteredSales} />
-      </div>
-    </QueryClientProvider>
+    <div className="h-screen w-full bg-green-200 flex flex-row">
+      {/* <Nav /> */}
+      <Table columns={columns} data={filteredSales} />
+    </div>
   );
 };
 

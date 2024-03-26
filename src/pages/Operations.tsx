@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "../components/Navegation/Nav";
 import TableAdministration from "../components/Elements/Tables/TableAdministration";
+import TableAdministration from "../components/Elements/Tables/TableAdministration";
 /* import '../styles/App.scss' */
 
 const Operations: React.FC = () => {
@@ -9,6 +10,7 @@ const Operations: React.FC = () => {
       {/* <h2>Administration</h2> */}
       <Nav />
       <TableAdministration searchValue={""} />
+      {/* <TableAdministration searchValue={""} /> */}
     </div>
   );
 };

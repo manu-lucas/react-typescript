@@ -9,40 +9,11 @@ import AddInvoice from "../../../components/Elements/Tables/AddInvoice";
 const Ventas: React.FC = () => {
   const [searchValue, setSearchValue] = useState("");
 
-  const handleSearchChange = (value: string) => {
-    setSearchValue(value);
-  };
+  const {data,isError,isLoading,error}=useGetOperaciones()
+ 
 
-  const [showTransactionModal, setShowTransactionModal] = useState(false);
-
-  const toggleTransactionModal = () => {
-    setShowTransactionModal(!showTransactionModal);
-  };
-
-  const handleCloseTransactionModal = () => {
-    setShowTransactionModal(false);
-  };
-
-  useEffect(() => {
-    const handleCloseOnClickOutside = (e: MouseEvent) => {
-      if (
-        e.target instanceof HTMLElement &&
-        !e.target.closest(".modal-content")
-      ) {
-        setShowTransactionModal(false);
-      }
-    };
-
-    if (showTransactionModal) {
-      document.addEventListener("mousedown", handleCloseOnClickOutside);
-    } else {
-      document.removeEventListener("mousedown", handleCloseOnClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleCloseOnClickOutside);
-    };
-  }, [showTransactionModal]);
+  if (isLoading) return <div>Loading...</div>;
+  else if (isError) return <div>Error:{error.message}</div>;
 
   return (
     <div className="h-screen w-full bg-green-200 flex flex-row">
