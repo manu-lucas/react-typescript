@@ -12,26 +12,29 @@ interface TableProps {
 }
 
 const Table: React.FC<TableProps> = ({ columns, data }) => {
-  const [sortConfig, setSortConfig] = useState<{ key: keyof typeof data[0] | null; direction: 'ascending' | 'descending' }>({ key: null, direction: 'ascending' });
+  const [sortConfig, setSortConfig] = useState<{
+    key: keyof (typeof data)[0] | null;
+    direction: "ascending" | "descending";
+  }>({ key: null, direction: "ascending" });
 
-  const handleSort = (key: keyof typeof data[0]) => {
-    let direction: 'ascending' | 'descending' = 'ascending';
-    if (sortConfig.key === key && sortConfig.direction === 'ascending') {
-      direction = 'descending';
+  const handleSort = (key: keyof (typeof data)[0]) => {
+    let direction: "ascending" | "descending" = "ascending";
+    if (sortConfig.key === key && sortConfig.direction === "ascending") {
+      direction = "descending";
     }
     setSortConfig({ key, direction });
   };
 
   const sortedData = [...data].sort((a, b) => {
-    const key = sortConfig.key as keyof typeof data[0];
-    if (sortConfig.direction === 'ascending') {
-      if (typeof a[key] === 'string') {
+    const key = sortConfig.key as keyof (typeof data)[0];
+    if (sortConfig.direction === "ascending") {
+      if (typeof a[key] === "string") {
         return a[key].localeCompare(b[key]); // Sort strings alphabetically
       } else {
         return a[key] - b[key]; // Sort numbers numerically
       }
     } else {
-      if (typeof a[key] === 'string') {
+      if (typeof a[key] === "string") {
         return b[key].localeCompare(a[key]); // Sort strings alphabetically
       } else {
         return b[key] - a[key]; // Sort numbers numerically
@@ -48,9 +51,13 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
               key={index}
               scope="col"
               className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer"
-              onClick={() => handleSort(column.key as keyof typeof data[0])}
+              onClick={() => handleSort(column.key as keyof (typeof data)[0])}
             >
-              {column.name} {sortConfig.key === column.key && sortConfig.direction === 'ascending' ? '↑' : '↓'}
+              {column.name}{" "}
+              {sortConfig.key === column.key &&
+              sortConfig.direction === "ascending"
+                ? "↑"
+                : "↓"}
             </th>
           ))}
         </tr>

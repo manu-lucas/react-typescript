@@ -17,8 +17,7 @@ const Ventas: React.FC = () => {
 
   const [searchValue, setSearchValue] = useState("");
 
-  const {data,isError,isLoading,error}=useGetOperaciones()
- 
+  const { data, isError, isLoading, error } = useGetOperaciones();
 
   if (isLoading) return <div>Loading...</div>;
   else if (isError) return <div>Error:{error.message}</div>;

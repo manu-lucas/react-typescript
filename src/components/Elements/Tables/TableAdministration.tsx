@@ -1,7 +1,6 @@
 import React from "react";
 import Table from "./Table";
 
-
 interface Sale {
   cliente: string;
   fecha: number;
@@ -22,10 +21,11 @@ interface TableAdministrationProps {
 }
 
 const TableAdministration: React.FC<TableAdministrationProps> = ({
-  searchValue,fechas,data
+  searchValue,
+  fechas,
+  data,
 }) => {
-
-  console.log(data)
+  console.log(data);
 
   const { dateStart, dateEnd } = fechas;
 
@@ -43,9 +43,6 @@ const TableAdministration: React.FC<TableAdministrationProps> = ({
         );
       })
     : [];
-
-  
-
 
   const columns = [
     {
@@ -83,10 +80,10 @@ const TableAdministration: React.FC<TableAdministrationProps> = ({
   ];
 
   return (
-      <div className="h-screen w-full bg-green-200 flex flex-row">
-        {/* <Nav /> */}
-        <Table columns={columns} data={filteredSales} />
-      </div>
+    <div className="h-screen w-full bg-green-200 flex flex-row">
+      {/* <Nav /> */}
+      <Table columns={columns} data={filteredSales} />
+    </div>
   );
 };
 
