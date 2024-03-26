@@ -5,7 +5,7 @@ import Contrasena from "../components/Elements/Contrasena";
 
 const CreaContrasena: React.FC = () => {
   return (
-    <div className="h-screen w-screen bg-verdePie flex flex-row">
+    <div className="h-screen w-screen bg-verdeFondo flex flex-row">
       {/* <h2>Administration</h2> */}
       {/*<Nav />*/}
       <Contrasena />

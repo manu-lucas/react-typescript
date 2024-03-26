@@ -8,7 +8,7 @@ const Administration: React.FC = () => {
 
   console.log(location.pathname);
   return (
-    <div className="h-screen w-full bg-green-200 flex flex-row">
+    <div className="h-screen w-full bg-grisFondo flex flex-row">
       <Nav />
       {location.pathname === "/administration" && <Ventas />}
 

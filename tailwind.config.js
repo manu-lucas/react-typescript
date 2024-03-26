@@ -18,9 +18,16 @@ module.exports = {
         140: "32rem", // Esto añade una clase de utilidad `w-35rem` para aplicar un ancho de 35rem
       },
       colors: {
-        verdeFondo: "#2BD99A",
-        verdePie: "#006F76",
+        enfasis: "#2BD99A",
+        verdeFondo: "#006F76",
+        amarillo: "#FFC300",
+        naranja:"#FF5733",
+        grisBarra : "#FDFEFE",
+        grisFondo:"#F1F1F1"
       },
+      /*fontFamily: {
+        'body': 'Orkney',
+      }*/
     },
   },
   darkMode: "class",

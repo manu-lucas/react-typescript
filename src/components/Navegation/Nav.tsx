@@ -156,7 +156,7 @@ const Nav: React.FC = () => {
   };
 
   return (
-    <div className="bg-verdePie h-screen w-15 rounded-br-[200px] pt-12">
+    <div className="bg-verdeFondo h-screen w-15 pt-12">
       <div className="flex justify-center">
         <img className="w-4/5" src="..\src\assets\logo_blanco_sin_fondo.png" />
       </div>

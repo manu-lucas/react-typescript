@@ -30,7 +30,7 @@ else if (isError) return <div>Error:{error.message}</div>
   // console.log(posts);
 
   return (
-    <div className="h-screen w-85 bg-green-200">
+    <div className="h-screen w-85 bg-grisFondo">
       <h2>Usuarios</h2>
 
       <h3>{bears}</h3>

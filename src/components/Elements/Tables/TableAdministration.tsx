@@ -95,7 +95,7 @@ const TableAdministration: React.FC<TableAdministrationProps> = ({
 
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="h-screen w-full bg-green-200 flex flex-row">
+      <div className="h-screen w-full bg-grisFondo flex flex-row">
         {/* <Nav /> */}
         <Table columns={columns} data={filteredSales} />
       </div>
