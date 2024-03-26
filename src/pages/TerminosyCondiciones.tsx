@@ -5,7 +5,7 @@ import TermsOfService from "../components/Elements/Terms";
 
 const TerminosyCondiciones: React.FC = () => {
   return (
-    <div className="h-screen w-full bg-green-200 flex flex-row">
+    <div className="h-screen w-full bg-grisFondo flex flex-row">
       {/* <h2>Administration</h2> */}
       <Nav />
       <TermsOfService />
