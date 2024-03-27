@@ -25,6 +25,10 @@ import Products from "./pages/nested/empresachild/Products";
 import ListaPrecios from "./pages/nested/empresachild/ListaPrecios";
 import Proveedors from "./pages/nested/empresachild/Proveedors";
 import Configuracion from "./pages/nested/empresachild/Configuracion";
+import AddInvoice1 from "./components/Elements/Tables/AddInvoice1";
+import { ThemeProvider, InvoiceProvider } from "./components/Invoice/providers";
+import { Snackbar } from "./components/Invoice/components/common";
+import { useAppSelector } from "./components/Invoice/store";
 
 let router = createBrowserRouter([
   {
