@@ -144,7 +144,7 @@ const Agendamiento: React.FC<PropsAgendamiento>  = ({changeState}) => {
 
   return (
     <div className="w-full absolute h-screen right-0 top-0 bg-gray-700 bg-opacity-30 backdrop-blur-sm" onClick={handleCloseOnClickOutside}>
-      <div className="w-140 bg-white mx-auto mt-10 rounded-3xl p-4" onClick={(e) => e.stopPropagation()}>
+      <div className="w-140 bg-white mx-auto mt-10 rounded-3xl p-4">
         <h3>Agendamiento</h3>
 
         <div className="flex flex-row">

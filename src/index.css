@@ -18,6 +18,32 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Orkney', sans-serif;
 
 }
+
+/*@layer base {
+  @font-face {
+    font-family: 'Orkney';
+    font-style: light;
+    font-weight: 400;
+    font-display: swap;
+    src: url(src\assets\fonts\orkney-light.otf) format('otf');
+  }
+
+  @font-face {
+    font-family: 'Circular Bold';
+    font-style: bold;
+    font-weight: 600;
+    font-display: swap;
+    src: url(/fonts/CircularStd-Bold.ttf) format('ttf');
+  }
+
+  @font-face {
+    font-family: 'Circular Book';
+    font-style: light;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/fonts/CircularStd-Book.ttf) format('ttf');
+  }
+}*/

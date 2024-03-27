@@ -20,9 +20,14 @@ import Cobros from "./pages/nested/Administration/Cobros";
 import Cuentas from "./pages/nested/Administration/Cuentas";
 import TerminosyCondiciones from "./pages/TerminosyCondiciones";
 import CreaContrasena from "./pages/CreaContrasena";
+import Usuarios from "./pages/nested/empresachild/Usuarios";
+import Products from "./pages/nested/empresachild/Products";
+import ListaPrecios from "./pages/nested/empresachild/ListaPrecios";
+import Proveedors from "./pages/nested/empresachild/Proveedors";
+import Configuracion from "./pages/nested/empresachild/Configuracion";
+import AddInvoice1 from "./components/Elements/Tables/AddInvoice1";
 import { ThemeProvider, InvoiceProvider } from "./components/Invoice/providers";
 import { Snackbar } from "./components/Invoice/components/common";
-import AddInvoice1 from "./components/Elements/Tables/AddInvoice1";
 import { useAppSelector } from "./components/Invoice/store";
 
 let router = createBrowserRouter([
@@ -84,6 +89,28 @@ let router = createBrowserRouter([
   {
     path: "/miempresa",
     element: <MiEmpresa />,
+    children: [
+      {
+        path: "usuarios",
+        element: <Usuarios />,
+      },
+      {
+        path: "productos",
+        element: <Products />,
+      },
+      {
+        path: "listaprecios",
+        element: <ListaPrecios />,
+      },
+      {
+        path: "proveedores",
+        element: <Proveedors />,
+      },
+      {
+        path: "configuracion",
+        element: <Configuracion />,
+      },
+    ],
   },
   {
     path: "/comercial",
@@ -118,6 +145,7 @@ let router = createBrowserRouter([
     path: "/componentes",
     element: <Componentes />,
   },
+
   {
     path: "/onboarding",
     element: "",

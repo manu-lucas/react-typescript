@@ -338,5 +338,119 @@
       "name": "Bank Yas",
       "account": "9876543290"
     }
+  ],
+  "usuarios": [
+    {
+      "id": 0,
+      "name": "Agus Gomez",
+      "cargo": null,
+      "email": "agomez@wecom.global",
+      "status": 1
+    },
+    {
+      "id": 1,
+      "name": "Erwin Rohrstock",
+      "cargo": null,
+      "email": "e.rohrstock@mundoparcelas.cl",
+      "status": 1
+    },
+    {
+      "id": 2,
+      "name": "Lucas Kuliz",
+      "cargo": null,
+      "email": "lucaskuliz@gmail.com",
+      "status": 0
+    },
+    {
+      "id": 3,
+      "name": "Tamara Cadevilla",
+      "cargo": null,
+      "email": "tamara@gmail.com",
+      "status": 0
+    },
+    {
+      "id": 4,
+      "name": "Agus Gomez",
+      "cargo": null,
+      "email": "agomez@wecom.global",
+      "status": 1
+    },
+    {
+      "id": 5,
+      "name": "Erwin Rohrstock",
+      "cargo": null,
+      "email": "e.rohrstock@mundoparcelas.cl",
+      "status": 1
+    },
+    {
+      "id": 6,
+      "name": "Lucas Kuliz",
+      "cargo": null,
+      "email": "lucaskuliz@gmail.com",
+      "status": 0
+    },
+    {
+      "id": 7,
+      "name": "Tamara Cadevilla",
+      "cargo": null,
+      "email": "tamara@gmail.com",
+      "status": 0
+    },
+    {
+      "id": 8,
+      "name": "Agus Gomez",
+      "cargo": null,
+      "email": "agomez@wecom.global",
+      "status": 1
+    },
+    {
+      "id": 9,
+      "name": "Erwin Rohrstock",
+      "cargo": null,
+      "email": "e.rohrstock@mundoparcelas.cl",
+      "status": 1
+    },
+    {
+      "id": 10,
+      "name": "Lucas Kuliz",
+      "cargo": null,
+      "email": "lucaskuliz@gmail.com",
+      "status": 0
+    },
+    {
+      "id": 11,
+      "name": "Tamara Cadevilla",
+      "cargo": null,
+      "email": "tamara@gmail.com",
+      "status": 0
+    },
+    {
+      "id": 12,
+      "name": "Samu Gomez",
+      "cargo": null,
+      "email": "agomez@wecom.global",
+      "status": 1
+    },
+    {
+      "id": 13,
+      "name": "pato Rohrstock",
+      "cargo": null,
+      "email": "e.rohrstock@mundoparcelas.cl",
+      "status": 1
+    },
+    {
+      "id": 14,
+      "name": "Ailen Kuliz",
+      "cargo": null,
+      "email": "lucaskuliz@gmail.com",
+      "status": 0
+    },
+    {
+      "id": 15,
+      "name": "Agostina Cadevilla",
+      "cargo": null,
+      "email": "tamara@gmail.com",
+      "status": 0
+    }
   ]
 }
